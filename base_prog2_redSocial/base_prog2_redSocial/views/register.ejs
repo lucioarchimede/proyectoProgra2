@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('./partials/head') %>
-<body>
-    <%- include('./partials/header') %>
-   
+<%- include('./partials/head') %>
 
-    <main>
-        <section class="center main-content">
-        <h1>Regsitrate</h1>
-        <p>Crear el formulario para registrar un nuevo usuario.</p>
-        </section>
-    </main>
+    <body>
+        <%- include('./partials/header') %>
 
-    <footer class="main-footer">
-        <ul class="social">
-            <li><a href="" uk-icon="instagram"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a href="" uk-icon="facebook"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="" uk-icon="twitter"><i class="fa-brands fa-twitter"></i></a></li>
-        </ul>
-        <ul class="team">
-            <li>Martin Hernandez</li>
-            <li>Lucia Perez</li>
-            <li>Gaston Sanchez</li>
-        </ul>
-    </footer>
 
-</body>
+            <main>
+                <section class="center main-content">
+                    <h1>Regsitrate</h1>
+                    <form action="register" method="post">
+                        <p>Email <input type="text" id="email" name="email"></p>
+                        <p>Password <input type="password" id="password" name="password"></p>
+                        <p>Foto <input type="file" id="foto" name="foto"></p>
+                        <p>Dni <input type="text" id="dni" name="dni"></p>
+                        <button type="submit"> Guardar </button>
+                    </form>
+
+
+
+                </section>
+            </main>
+
+            <footer class="main-footer">
+                <ul class="social">
+                    <li><a href="" uk-icon="instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="" uk-icon="facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="" uk-icon="twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+                <ul class="team">
+                    <li>Martin Hernandez</li>
+                    <li>Lucia Perez</li>
+                    <li>Gaston Sanchez</li>
+                </ul>
+            </footer>
+
+    </body>
 
 </html>
