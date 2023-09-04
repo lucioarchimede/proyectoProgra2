@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
   res.render('login', { title: 'Login' });
 });
 
-router.post('/',loginController.login);
+router.post('/', usersController.login);
 
-router.post("/login",loginController.login);
+router.post("/login", usersController.login);
 
 
 router.get('/index', function(req, res, next) {
@@ -21,9 +21,9 @@ router.get('/registracion', function(req, res, next) {
   res.render('register', { title: 'registracion' });
 });
 
-router.post('/register',loginController.register );
+router.post('/register',usersController.register );
 
-router.post('/edit',loginController.edit );
+router.post('/edit',usersController.edit );
 
 
 
