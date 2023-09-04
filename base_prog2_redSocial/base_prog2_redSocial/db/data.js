@@ -1,13 +1,51 @@
 let data = {
-    usuario : {
-        email: 'MGimenezRojas@gmail.com',
-        nombreDeUsuario:'MatiGimenez34',
-        contrasena:'',
-        fotoDePerfil:'',
-        fechaDeNacimiento:'06/03/1999',
-        Dni:'41.683.316',
-        logueado:true
-    },
+    usuario :  [
+        {
+            email: 'MGimenezRojas@gmail.com',
+            nombreDeUsuario:'MatiGimenez34',
+            contrasena:'',
+            fotoPerfil:'',
+            fechaDeNacimiento:'06/03/1999',
+            Dni:'41.683.316',
+            logueado:true
+        },
+        {
+            email: 'MGimenezRojas@gmail.com',
+            nombreDeUsuario:'MatiGimenez34',
+            contrasena:'',
+            fotoPerfil:'',
+            fechaDeNacimiento:'06/03/1999',
+            Dni:'41.683.316',
+            logueado:true
+        },
+        {
+            email: 'MGimenezRojas@gmail.com',
+            nombreDeUsuario:'MatiGimenez34',
+            contrasena:'',
+            fotoPerfil:'',
+            fechaDeNacimiento:'06/03/1999',
+            Dni:'41.683.316',
+            logueado:true
+        },
+        {
+            email: 'MGimenezRojas@gmail.com',
+            nombreDeUsuario:'MatiGimenez34',
+            contrasena:'',
+            fotoPerfil:'',
+            fechaDeNacimiento:'06/03/1999',
+            Dni:'41.683.316',
+            logueado:true
+        },
+        {
+            email: 'MGimenezRojas@gmail.com',
+            nombreDeUsuario:'MatiGimenez34',
+            contrasena:'',
+            fotoPerfil:'',
+            fechaDeNacimiento:'06/03/1999',
+            Dni:'41.683.316',
+            logueado:true
+        },
+    ],
     posteos:[
         {
             idUser:'',
@@ -267,3 +305,4 @@ let data = {
 
     
 }
+module.exports = data
