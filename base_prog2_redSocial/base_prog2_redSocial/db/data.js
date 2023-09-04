@@ -2,304 +2,379 @@ let data = {
     usuario :  [
         {
             email: 'MGimenezRojas@gmail.com',
-            nombreDeUsuario:'MatiGimenez34',
-            contrasena:'',
+            contrasena:'ABC123',
             fotoPerfil:'',
-            fechaDeNacimiento:'06/03/1999',
-            Dni:'41.683.316',
+            fechaDeNacimiento:'06-03-1999',
+            Dni:'41683316',
             logueado:true
         },
         {
-            email: 'MGimenezRojas@gmail.com',
-            nombreDeUsuario:'MatiGimenez34',
-            contrasena:'',
+            email: 'ChristianH@gmail.com',
+            contrasena:'DEF456',
             fotoPerfil:'',
-            fechaDeNacimiento:'06/03/1999',
-            Dni:'41.683.316',
+            fechaDeNacimiento:'2003-06-19',
+            Dni:'44898471',
             logueado:true
         },
         {
-            email: 'MGimenezRojas@gmail.com',
-            nombreDeUsuario:'MatiGimenez34',
-            contrasena:'',
+            email: 'LautaroCucco@gmail.com',
+            contrasena:'GHI789',
             fotoPerfil:'',
-            fechaDeNacimiento:'06/03/1999',
-            Dni:'41.683.316',
+            fechaDeNacimiento:'2001-07-18',
+            Dni:'43626147',
             logueado:true
         },
         {
-            email: 'MGimenezRojas@gmail.com',
-            nombreDeUsuario:'MatiGimenez34',
-            contrasena:'',
+            email: 'Lucioarchi@gmail.com',
+            contrasena:'JKM147',
             fotoPerfil:'',
-            fechaDeNacimiento:'06/03/1999',
-            Dni:'41.683.316',
+            fechaDeNacimiento:'2003-05-29',
+            Dni:'45678901',
             logueado:true
         },
         {
-            email: 'MGimenezRojas@gmail.com',
-            nombreDeUsuario:'MatiGimenez34',
-            contrasena:'',
+            email: 'Michaelphelps@gmail.com',
+            contrasena:'NOP852',
             fotoPerfil:'',
-            fechaDeNacimiento:'06/03/1999',
-            Dni:'41.683.316',
+            fechaDeNacimiento:'1985-30-06',
+            Dni:'30222589',
+            logueado:true
+        },
+        {
+            email: 'leonardodicaprio@gmail.com',
+            contrasena:'zzz777',
+            fotoPerfil:'',
+            fechaDeNacimiento:'1974-11-11',
+            Dni:'12345678',
+            logueado:true
+        },
+        {
+            email: 'angelinajolie@gmail.com',
+            contrasena:'xyz456',
+            fotoPerfil:'',
+            fechaDeNacimiento:'1975-06-04',
+            Dni:'23456789',
+            logueado:true
+        },
+        {
+            email: 'bradpitt@gmail.com',
+            contrasena:'mno789',
+            fotoPerfil:'',
+            fechaDeNacimiento:'1963-12-18',
+            Dni:'34567890',
+            logueado:true
+        },
+        {
+            email: 'jenniferaniston@gmail.com',
+            contrasena:'pqr321',
+            fotoPerfil:'',
+            fechaDeNacimiento:'1969-02-11',
+            Dni:'45678901',
+            logueado:true
+        },
+        {
+            email: 'tomhanks@gmail.com',
+            contrasena:'def789',
+            fotoPerfil:'',
+            fechaDeNacimiento:'1956-07-09',
+            Dni:'56789012',
             logueado:true
         },
     ],
     posteos:[
         {
-            idUser:'',
+            idUser:'1',
             imagen:'',
-            descripcion:'',
+            descripcion:'Disfrutando del sol en la playa 🏖',
         },
         {
-            idUser:'',
+            idUser:'2',
             imagen:'',
-            descripcion:'',
+            descripcion:'Explorando la ciudad en bicicleta 🚴‍♂️',
         },
         {
-            idUser:'',
+            idUser:'3',
             imagen:'',
-            descripcion:'',
+            descripcion:'Preparando una deliciosa cena casera 🍽️',
         },
         {
-            idUser:'',
+            idUser:'4',
             imagen:'',
-            descripcion:'',
+            descripcion:'Vista panorámica desde la montaña ⛰️',
         },
         {
-            idUser:'',
+            idUser:'5',
             imagen:'',
-            descripcion:'',
+            descripcion:'Pintando un nuevo cuadro 🎨',
         },
         {
-            idUser:'',
+            idUser:'5',
             imagen:'',
-            descripcion:'',
+            descripcion:'Concierto en vivo con amigos 🎵',
         },
         {
-            idUser:'',
+            idUser:'4',
             imagen:'',
-            descripcion:'',
+            descripcion:'Aventura en la selva tropical 🌴',
         },
         {
-            idUser:'',
+            idUser:'3',
             imagen:'',
-            descripcion:'',
+            descripcion:'Noche de juegos de mesa 🎲',
         },
         {
-            idUser:'',
+            idUser:'2',
             imagen:'',
-            descripcion:'',
+            descripcion:'Recuerdos de un viaje inolvidable ✈️',
         },
         {
-            idUser:'',
+            idUser:'1',
             imagen:'',
-            descripcion:'',
+            descripcion:'Un día perfecto para un picnic 🧺',
         }
 
     ],
     comentarios:[
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'1',
+            idUsuario:'2',
+            textoComentario:'¡Qué hermosa playa! 🌊',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'1',
+            idUsuario:'3',
+            textoComentario:'Disfrutando del paraíso 😍',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'1',
+            idUsuario:'4',
+            textoComentario:'¿Alguien sabe dónde está esto?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'1',
+            idUsuario:'5',
+            textoComentario:'Qué envidia, me encantaría estar allí ahora.',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'2',
+            idUsuario:'3',
+            textoComentario:'Amo esta ciudad 🏙️',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'2',
+            idUsuario:'5',
+            textoComentario:'¡La bicicleta es la mejor forma de explorar! 🚴‍♀️',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'2',
+            idUsuario:'6',
+            textoComentario:'¿Qué lugares visitaron?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'2',
+            idUsuario:'7',
+            textoComentario:'Necesito ir allí pronto.',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'3',
+            idUsuario:'6',
+            textoComentario:'Esa cena se ve deliciosa 🍝',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'3',
+            idUsuario:'8',
+            textoComentario:'¿Me puedes dar la receta?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'3',
+            idUsuario:'9',
+            textoComentario:'Buen Provecho',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'3',
+            idUsuario:'10',
+            textoComentario:'¡Quiero una invitación para cenar contigo!',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'4',
+            idUsuario:'2',
+            textoComentario:'Increíble vista desde la montaña 🏞️',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'4',
+            idUsuario:'5',
+            textoComentario:'¿Fue una caminata difícil?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'4',
+            idUsuario:'6',
+            textoComentario:'La naturaleza siempre asombra 🌿',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'4',
+            idUsuario:'7',
+            textoComentario:'¡Qué aventura!',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'5',
+            idUsuario:'1',
+            textoComentario:'¡Qué talento tienes! 🎨',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'5',
+            idUsuario:'3',
+            textoComentario:'Me encanta tu obra de arte 🖼️',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'5',
+            idUsuario:'4',
+            textoComentario:'¿Vas a vender tus pinturas?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'5',
+            idUsuario:'5',
+            textoComentario:'Sigue pintando, eres genial',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'6',
+            idUsuario:'4',
+            textoComentario:'¡El concierto estuvo increíble! 🎶',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'6',
+            idUsuario:'5',
+            textoComentario:'¿Cuál fue tu canción favorita?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'6',
+            idUsuario:'7',
+            textoComentario:'Buena compañía, buena música 🎤',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'6',
+            idUsuario:'9',
+            textoComentario:'Quiero unirme la próxima vez.',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'7',
+            idUsuario:'2',
+            textoComentario:'La selva tropical es asombrosa 🌴',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'7',
+            idUsuario:'3',
+            textoComentario:'¿Viste animales exóticos?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'7',
+            idUsuario:'6',
+            textoComentario:'¡Aventura en su máxima expresión! 🌿',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'7',
+            idUsuario:'8',
+            textoComentario:'¿Algún consejo para visitar la selva?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'8',
+            idUsuario:'3',
+            textoComentario:'¡Noche de juegos es la mejor noche! 🎲',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'8',
+            idUsuario:'5',
+            textoComentario:'¿Qué juegos jugaron?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'8',
+            idUsuario:'7',
+            textoComentario:'Diviértete mucho, amigos 😄',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'8',
+            idUsuario:'10',
+            textoComentario:'¡Necesito una noche de juegos!',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'9',
+            idUsuario:'1',
+            textoComentario:'¡Ese viaje fue inolvidable! ✈️',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'9',
+            idUsuario:'2',
+            textoComentario:'¡Quiero volver allí! 🌍',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'9',
+            idUsuario:'4',
+            textoComentario:'Las mejores experiencias de mi vida 🌟',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'9',
+            idUsuario:'8',
+            textoComentario:'¿Algún consejo para viajar?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'10',
+            idUsuario:'3',
+            textoComentario:'¡Un picnic perfecto en un día perfecto! 🧺',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'10',
+            idUsuario:'5',
+            textoComentario:'¿Qué comida llevaron?',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'10',
+            idUsuario:'6',
+            textoComentario:'¡Disfruten el aire libre! 🌞',
             fotoDePer:''
         },
         {
-            nombreDeUs:'',
-            textoDelComentario:'',
+            idPost:'10',
+            idUsuario:'9',
+            textoComentario:'Me encantaría unirme a ustedes.',
             fotoDePer:''
-        }
+        },
     ]
 
 
