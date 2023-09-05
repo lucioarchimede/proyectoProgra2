@@ -1,6 +1,6 @@
 let data = {
     usuario :  [
-        {
+        {   id: 1,
             email: 'MGimenezRojas@gmail.com',
             contrasena:'ABC123',
             fotoPerfil:'',
@@ -8,7 +8,7 @@ let data = {
             Dni:'41683316',
             logueado:true
         },
-        {
+        {   id: 2,
             email: 'ChristianH@gmail.com',
             contrasena:'DEF456',
             fotoPerfil:'',
@@ -16,7 +16,7 @@ let data = {
             Dni:'44898471',
             logueado:true
         },
-        {
+        {   id: 3,
             email: 'LautaroCucco@gmail.com',
             contrasena:'GHI789',
             fotoPerfil:'',
@@ -24,7 +24,7 @@ let data = {
             Dni:'43626147',
             logueado:true
         },
-        {
+        {   id: 4,
             email: 'Lucioarchi@gmail.com',
             contrasena:'JKM147',
             fotoPerfil:'',
@@ -32,7 +32,7 @@ let data = {
             Dni:'45678901',
             logueado:true
         },
-        {
+        {   id: 5,
             email: 'Michaelphelps@gmail.com',
             contrasena:'NOP852',
             fotoPerfil:'',
@@ -40,7 +40,7 @@ let data = {
             Dni:'30222589',
             logueado:true
         },
-        {
+        {id: 6,
             email: 'leonardodicaprio@gmail.com',
             contrasena:'zzz777',
             fotoPerfil:'',
@@ -48,7 +48,7 @@ let data = {
             Dni:'12345678',
             logueado:true
         },
-        {
+        {   id: 7,
             email: 'angelinajolie@gmail.com',
             contrasena:'xyz456',
             fotoPerfil:'',
@@ -56,7 +56,7 @@ let data = {
             Dni:'23456789',
             logueado:true
         },
-        {
+        {   id: 8,
             email: 'bradpitt@gmail.com',
             contrasena:'mno789',
             fotoPerfil:'',
@@ -64,7 +64,7 @@ let data = {
             Dni:'34567890',
             logueado:true
         },
-        {
+        {   id: 9,
             email: 'jenniferaniston@gmail.com',
             contrasena:'pqr321',
             fotoPerfil:'',
@@ -72,7 +72,7 @@ let data = {
             Dni:'45678901',
             logueado:true
         },
-        {
+        {   id: 10,
             email: 'tomhanks@gmail.com',
             contrasena:'def789',
             fotoPerfil:'',
@@ -83,52 +83,52 @@ let data = {
     ],
     posteos:[
         {
-            idUser:'1',
+            idUser:1,
             imagen:'',
             descripcion:'Disfrutando del sol en la playa 🏖',
         },
         {
-            idUser:'2',
+            idUser:2,
             imagen:'',
             descripcion:'Explorando la ciudad en bicicleta 🚴‍♂️',
         },
         {
-            idUser:'3',
+            idUser:3,
             imagen:'',
             descripcion:'Preparando una deliciosa cena casera 🍽️',
         },
         {
-            idUser:'4',
+            idUser:4,
             imagen:'',
             descripcion:'Vista panorámica desde la montaña ⛰️',
         },
         {
-            idUser:'5',
+            idUser:5,
             imagen:'',
             descripcion:'Pintando un nuevo cuadro 🎨',
         },
         {
-            idUser:'5',
+            idUser:5,
             imagen:'',
             descripcion:'Concierto en vivo con amigos 🎵',
         },
         {
-            idUser:'4',
+            idUser:4,
             imagen:'',
             descripcion:'Aventura en la selva tropical 🌴',
         },
         {
-            idUser:'3',
+            idUser:3,
             imagen:'',
             descripcion:'Noche de juegos de mesa 🎲',
         },
         {
-            idUser:'2',
+            idUser:2,
             imagen:'',
             descripcion:'Recuerdos de un viaje inolvidable ✈️',
         },
         {
-            idUser:'1',
+            idUser:1,
             imagen:'',
             descripcion:'Un día perfecto para un picnic 🧺',
         }

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var usersController= require('../controller/usersController');
 const postController = require('../controller/postController');
+const indexController = require('../controller/indexController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,9 +14,10 @@ router.post('/', usersController.login);
 router.post("/login", usersController.login);
 
 
-router.get('/index', function(req, res, next) {
-  res.render('index', { title: 'index' });
-});
+router.get('/index',indexController.showIndex );
+
+
+
 
 router.get('/registracion', function(req, res, next) {
   res.render('register', { title: 'registracion' });
@@ -39,14 +41,10 @@ router.get('/detallePost', function(req, res, next) {
   res.render('detallePost', { title: 'Detalle Post' });
 });
 
-router.get('/perfil', function(req, res, next) {
-  res.render('miPerfil', { title: 'Mi perfil' });
-});
+router.get('/perfil',usersController.perfil);
 
 
-router.get('/detalleUsuario', function(req, res, next) {
-  res.render('detalleUsuario', { title: 'Detalle Usuario' });
-});
+router.get('/detalleUsuario',usersController.detalle);
 
 
 router.get('/editarPerfil', function(req, res, next) {
