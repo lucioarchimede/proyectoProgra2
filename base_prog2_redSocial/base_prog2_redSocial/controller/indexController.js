@@ -3,9 +3,9 @@ const dataBase = require ('../db/data');
 
 const indexController = {
     showIndex: function (req, res){
-        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[0].id)
+        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
         return res.render('index',{
-            usuario: dataBase.usuario[0],
+            usuario: dataBase.usuario[1],
             productos: dataBase.productos,
             logueado: dataBase.usuario.logueado,
             posts:posteos,

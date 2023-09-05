@@ -23,12 +23,12 @@ const usersController = {
 
     },
     detalle: function (req, res) {
-        return res.render("detalleusuario", {usuario: dataBase.usuario[0]})
+        return res.render("detalleusuario", {usuario: dataBase.usuario[1]})
 
     },
     perfil: function (req, res) {
-        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[0].id)
-        return res.render("miPerfil", {usuario: dataBase.usuario[0],posts:posteos})
+        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
+        return res.render("miPerfil", {usuario: dataBase.usuario[1],posts:posteos})
 
 
     },
