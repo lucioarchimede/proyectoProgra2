@@ -131,6 +131,7 @@ let data = {
             idUser:1,
             imagen:'',
             descripcion:'Un día perfecto para un picnic 🧺',
+            
         }
 
     ],
