@@ -28,6 +28,8 @@ header {
     left: 0;
     right: 0;
     background-color: #fff;
+    border-top: 1px solid #4987c5;
+    border-bottom: 1px solid #4987c5;
 }
 .main-nav {
     display: flex;
@@ -116,7 +118,7 @@ main {
     margin-right: 10px;
     border-radius: 90%;
     padding: 1px;
-    border: 2px solid chocolate;
+    border: 2px solid #4987c5;
 }
 .post-reacciones {
     display: flex;
@@ -155,7 +157,8 @@ main {
     left: 0;
     right: 0;
     background: #fff;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #4987c5;
+    border-bottom: 1px solid #4987c5;
     padding: 20px 10px;
 }
 .social li {
@@ -198,7 +201,7 @@ main {
     margin-right: 10px;
     border-radius: 90%;
     padding: 1px;
-    border: 2px solid chocolate;
+    border: 2px solid #4987c5;
 }
 .comment .text {
     font-size: 12px;
@@ -224,14 +227,14 @@ main {
 }
 .comment-form button {
     padding: 5px 0;
-    background-color:mediumseagreen;
-    border: 1px solid mediumaquamarine;
+    background-color:#014a94;
+    border: 1px solid #4987c5;
     border-radius: 5px;
     color: #fff;
 }
 .comment-form button:hover {
     cursor: pointer;
-    background-color: forestgreen;
+    background-color: #014a94;
 }
 /* User detail */
 
@@ -272,19 +275,19 @@ main {
 }
 .follow {
     padding: 3px 20px 7px;
-    background-color: mediumseagreen;
-    border: 1px solid mediumaquamarine;
+    background-color: #014a94;
+    border: 1px solid #4987c5;
     border-radius: 5px;
     color: #fff;
     margin-left: 20px;
 }
 .follow:hover{
     cursor: pointer;
-    background-color: forestgreen;
+    background-color: #014a94;
 }
 .profile {
     border-radius: 90%;
-    border: 2px solid chocolate;
+    border: 2px solid #4987c5;
 }
 
 .user-detail .meta {
