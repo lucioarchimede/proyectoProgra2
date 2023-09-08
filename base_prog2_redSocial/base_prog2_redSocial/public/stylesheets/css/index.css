@@ -21,13 +21,17 @@ body {
     padding: 0;
     color:#777
 }
+
+.txtH{
+    color: white
+}
 /* navigation */
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: #014a94;  
     border-top: 1px solid #4987c5;
     border-bottom: 1px solid #4987c5;
 }
@@ -156,7 +160,7 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #014a94;
     border-top: 1px solid #4987c5;
     border-bottom: 1px solid #4987c5;
     padding: 20px 10px;
