@@ -91,21 +91,25 @@ let data = {
             comments:[
                 {
                     idUsuario:2,
+                    nomComent:"ChrisHelmich",
                     textoComentario:'¡Qué hermosa playa! 🌊',
                     fotoDePer:''
                 },
                 {
                     idUsuario:3,
+                    nomComent:"cucco51",
                     textoComentario:'Disfrutando del paraíso 😍',
                     fotoDePer:''
                 },
                 {
                     idUsuario:4,
+                    nomComent:"LucioArchi",
                     textoComentario:'¿Alguien sabe dónde está esto?',
                     fotoDePer:''
                 },
                 {
                     idUsuario:5,
+                    nomComent:"MichaelPhelps",
                     textoComentario:'Qué envidia, me encantaría estar allí ahora.',
                     fotoDePer:''
                 }
@@ -120,21 +124,25 @@ let data = {
             comments:[
                 {
                     idUsuario:3,
+                    nomComent:"cucco51",
                     textoComentario:'Amo esta ciudad 🏙️',
                     fotoDePer:''
                 },
                 {
                     idUsuario:5,
+                    nomComent:"MichaelPhelps",
                     textoComentario:'¡La bicicleta es la mejor forma de explorar! 🚴‍♀️',
                     fotoDePer:''
                 },
                 {
                     idUsuario:6,
+                    nomComent:"LeoDicaprio",
                     textoComentario:'¿Qué lugares visitaron?',
                     fotoDePer:''
                 },
                 {
                     idUsuario:7,
+                    nomComent:"AngieJolie",
                     textoComentario:'Necesito ir allí pronto.',
                     fotoDePer:''
                 }

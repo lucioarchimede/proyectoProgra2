@@ -27,7 +27,7 @@ const usersController = {
 
     },
     perfil: function (req, res) {
-        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
+        // let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
         return res.render("miPerfil", {usuario: dataBase.usuario[1],posts:posteos})
 
 

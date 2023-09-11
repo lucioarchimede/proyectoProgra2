@@ -34,14 +34,14 @@
                             <div class="post-comentarios">
                                 <h4>Comentarios</h4>
                                 <ul>
-                                    <li>
-                                        <a href="/detalleUsuario">Usuario</a>
-                                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                                    </li>
-                                    <li>
-                                        <a href="/detalleUsuario">Usuario</a>
-                                        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi</span>
-                                    </li>
+                                    <% for( let j = 0; j < posts[i].comments.length; j++ ) { %>
+                                        <li>
+                                            <a href="/detalleUsuario"><%= posts[i].comments[j].nomComent %></a>
+                                            <span><%= posts[i].comments[j].textoComentario %></span>
+                                        </li>
+                                    
+                                    <% } %>
+                                    
                                     <a href="/detallePost">Ver más...</a>
                                 </ul>
                             </div>
