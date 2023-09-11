@@ -37,7 +37,8 @@ router.get('/agregar', function(req, res, next) {
 router.post("/guardarPost",postController.guardarPost)
 
 
-router.get('/detallePost',postController.detalle );
+
+router.get('/detallePost',postController.detalle);
 
 router.get('/perfil',usersController.perfil);
 
