@@ -357,3 +357,9 @@
         .foto{
             width: 100px;
         }
+        .buscar2 {
+            position: relative;
+            margin-left: 150px;
+            margin-right: 250px;
+            padding: 5px;
+          }
