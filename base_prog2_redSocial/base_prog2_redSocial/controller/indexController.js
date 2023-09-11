@@ -6,7 +6,7 @@ const indexController = {
     showIndex: function (req, res){
         let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
         return res.render('index',{
-            usuario: dataBase.usuario[1],
+            usuario: dataBase.usuario,
             productos: dataBase.productos,
             logueado: dataBase.usuario.logueado,
             posts:posteos,

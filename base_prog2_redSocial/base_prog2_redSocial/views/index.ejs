@@ -8,14 +8,13 @@
 
             <main>
                 <section class="center main-content">
-                    <% posts.forEach ((post)=>{
-                        %>
+                    <% for (let i = 0; i < posts.length; i++) { %>
                         <article class="post">
                             <div class="info-usuario ">
                                 <img src="https://via.placeholder.com/40" alt="">
                                 <h4>
                                     <a href="/detalleUsuario">
-                                        <%= usuario.email %>
+                                        <%= posts[i].nombreUsuario %>
                                     </a>
                                 </h4>
                             </div>
@@ -48,7 +47,7 @@
                             </div>
                         </article>
 
-                        <% }) %>
+                        <% } %>
 
 
                 </section>

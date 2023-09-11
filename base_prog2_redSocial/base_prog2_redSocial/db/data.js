@@ -85,6 +85,7 @@ let data = {
         {
             id:1,
             idUser:1,
+            nombreUsuario: "MatiGimenez",
             imagen:'',
             descripcion:'Disfrutando del sol en la playa 🏖',
             comments:[
@@ -108,11 +109,12 @@ let data = {
                     textoComentario:'Qué envidia, me encantaría estar allí ahora.',
                     fotoDePer:''
                 }
-            ]
+            ],
         },
         {
             id:2,
             idUser:2,
+            nombreUsuario:"ChrisHelmich",
             imagen:'',
             descripcion:'Explorando la ciudad en bicicleta 🚴‍♂️',
             comments:[
@@ -141,6 +143,7 @@ let data = {
         {
             id:3,
             idUser:3,
+            nombreUsuario:"cucco51",
             imagen:'',
             descripcion:'Preparando una deliciosa cena casera 🍽️',
             comments:[
@@ -169,6 +172,7 @@ let data = {
         {
             id:4,
             idUser:4,
+            nombreUsuario:"LucioArchi",
             imagen:'',
             descripcion:'Vista panorámica desde la montaña ⛰️',
             comments:[
@@ -197,6 +201,7 @@ let data = {
         {
             id:5,
             idUser:5,
+            nombreUsuario:"",
             imagen:'',
             descripcion:'Pintando un nuevo cuadro 🎨',
             comments:[
