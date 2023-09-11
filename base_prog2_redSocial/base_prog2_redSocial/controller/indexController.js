@@ -1,6 +1,7 @@
 const dataBase = require ('../db/data');
 
 
+
 const indexController = {
     showIndex: function (req, res){
         let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
