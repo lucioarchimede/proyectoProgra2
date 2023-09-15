@@ -11,18 +11,21 @@
         <div class="post-detail container">
             <section class="center main-content post">
                 
-                <% posts.forEach ((post)=>{
-                    %>
-                <div class="info-usuario">
-                    <img src="https://via.placeholder.com/40" alt="">
-                    <p><a href="/detalleUsuario">
-                        <%= usuario.email %>
-                        
-                    </a></p>
-                </div>
-                <img class="photo" src="https://via.placeholder.com/500x600" alt="">
+                <% for( let i = 0; i < posts.length; i++ ) { %>
+
+                    <div class="info-usuario">
+                        <img src="https://via.placeholder.com/40" alt="">
+                        <p><a href="detalleUsuario.ejs">
+                            <%= usuario.email %>
+                            
+                        </a></p>
+                    </div>
+                    <img class="photo" src="https://via.placeholder.com/500x600" alt="">
                 
-                <% }) %>
+                <% } %>
+                
+                
+                <%  %>
             </section>
         </div>
     </main>
