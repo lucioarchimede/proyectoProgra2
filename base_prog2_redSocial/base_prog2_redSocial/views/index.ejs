@@ -4,8 +4,11 @@
 <%- include('./partials/head') %>
 
     <body>
-        
-        <%- include('./partials/header') %>
+        <% if (locals.user == undefined) { %>
+            <%- include('./partials/header.ejs') %> 
+        <% } else { %>
+         <%- include('./partials/headerLogueado.ejs')  %>
+        <% } %>
 
             <main>
                 <section class="center main-content">
