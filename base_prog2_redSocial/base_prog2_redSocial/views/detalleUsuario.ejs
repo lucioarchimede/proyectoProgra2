@@ -6,11 +6,11 @@
     <%- include('./partials/head') %>
 <body>
     <% if (locals.user == undefined) { %>
-        <%- include('./partials/header') %> 
+        <%- include('./partials/headerLogueado') %> 
     <% } else { %>
-     <%- include('./partials/headerLogueado')  %>
+     <%- include('./partials/header')  %>
     <% } %>
-
+    
     <main>
         <div class="user-detail container">
             <section class="top main-content">

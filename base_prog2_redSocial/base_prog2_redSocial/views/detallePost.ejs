@@ -7,9 +7,9 @@
 
     <body>
         <% if (locals.user == undefined) { %>
-            <%- include('./partials/header') %> 
+            <%- include('./partials/headerLogueado') %> 
         <% } else { %>
-         <%- include('./partials/headerLogueado')  %>
+         <%- include('./partials/header')  %>
         <% } %>
 
             <main>
