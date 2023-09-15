@@ -5,7 +5,6 @@ const usersController = {
         // console.log("email: " + req.body.email)
         console.log("password: " + req.body.password)
         return res.render("index", {
-
             user: dataBase.usuario
 
         });
@@ -23,12 +22,12 @@ const usersController = {
 
     },
     detalle: function (req, res) {
-        return res.render("detalleusuario", {usuario: dataBase.usuario[1]})
+        return res.render("detalleUsuario", {usuario: dataBase.usuario[3]})
 
     },
     perfil: function (req, res) {
-        // let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[1].id)
-        return res.render("miPerfil", {usuario: dataBase.usuario[1],posts:posteos})
+        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[3].id)
+        return res.render("miPerfil", {usuario: dataBase.usuario[3],posts:posteos})
 
 
     },

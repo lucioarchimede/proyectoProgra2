@@ -4,6 +4,7 @@
 <%- include('./partials/head') %>
 
     <body>
+        
         <%- include('./partials/header') %>
 
             <main>
@@ -19,7 +20,7 @@
                                 </h4>
                             </div>
                             <div class="post-body">
-                                <a href="/detallePost">
+                                <a href=" <%='/detallePost/'+ posts[i].id %> ">
                                     <img src="<%= posts[i].imagen %>" alt="" >
                                 </a>
                             </div>
@@ -42,7 +43,7 @@
                                     
                                     <% } %>
                                     
-                                    <a href="/detallePost">Ver más...</a>
+                                    <a href=" <%='/detallePost/'+ posts[i].id %> ">Ver más...</a>
                                 </ul>
                             </div>
                         </article>

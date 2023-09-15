@@ -16,7 +16,7 @@ router.post("/login", usersController.login);
 
 router.get('/index',indexController.showIndex );
 
-
+router.post('/index',indexController.home);
 
 
 router.get('/registracion', function(req, res, next) {
@@ -38,7 +38,7 @@ router.post("/guardarPost",postController.guardarPost)
 
 
 
-router.get('/detallePost',postController.detalle);
+router.get('/detallePost/:id',postController.detalle);
 
 router.get('/perfil',usersController.perfil);
 
