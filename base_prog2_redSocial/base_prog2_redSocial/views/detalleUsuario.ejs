@@ -16,7 +16,7 @@
             <section class="top main-content">
                 <img class="profile" src="https://via.placeholder.com/100x100" alt="">
                 <div class="info-usuario">
-                    <p> <%= usuario.email %> </p> 
+                    <p> <%= usuario[0].nombreUsuario %> </p> 
                     <a class="follow" href="">seguir</a>
                     <ul class="meta">
                         <li>2 post</li>
@@ -27,30 +27,13 @@
             </section>
             <section class="bottom">
                 <article class="post">
-                    <a href="/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
+                    <% for( let i = 0; i < usuario.length; i++ ) { %>
+                        <a href="detallePost.ejs" <%= usuario[i].id %>>
+                            <img src="<%= usuario[i].imagen %>" alt="">
+                        </a>
+                        <% } %>
                 </article>
-                <article class="post">
-                    <a href="/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
+       
             </section>
         </div>
     </main>

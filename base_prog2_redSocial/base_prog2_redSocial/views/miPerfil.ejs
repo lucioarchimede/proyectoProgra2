@@ -11,7 +11,7 @@
             <section class="top main-content">
                 <img class="profile" src="https://via.placeholder.com/100x100" alt="">
                 <div class="info-usuario">
-                    <p><%= usuario.email %></p> 
+                    <p><%= usuario.nombreUsuario %></p> 
                     <a class="follow" href="editarPerfil"><i class="fa-solid fa-user-gear"></i></a>
                     <ul class="meta">
                         <li>2 post</li>
@@ -19,20 +19,18 @@
                         <li>357 seguidos</li>
                     </ul>
                 </div>
-            </section>
-            <section class="bottom">
-
-                <% posts.forEach ((post)=>{
-                    %>
-                <article class="post">
-                    <a href="/detallePost">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <% }) %>
-             
-            </section>
+               
+                <% for( let i = 0; i < usuario.length; i++ ) { %>
+                </section>
+                <section class="bottom">
+    
+                    <article class="post">
+                        <a href="/detallePost">
+                            <img src=",<%= usuario[i].imagen %>" alt="">
+                        </a>
+                    </article>
         </div>
+        <% } %>
     </main>
 
     <footer class="main-footer">

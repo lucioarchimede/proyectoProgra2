@@ -28,10 +28,10 @@ const indexController = {
     home: function (req, res) {
         let usuarios = dataBase.usuario;
         for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email === req.body.email) {
+            if (usuarios[i].email == req.body.email) {
             }
         }
-        if (usuarios[0] && usuarios[0].contrasena === req.body.password) {
+        if (usuarios[0] && usuarios[0].contrasena == req.body.password) {
             return res.render('index', {
                 usuario: dataBase.usuario,
                 productos: dataBase.productos,

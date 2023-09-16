@@ -22,12 +22,30 @@ const usersController = {
 
     },
     detalle: function (req, res) {
-        return res.render("detalleUsuario", {usuario: dataBase.usuario[3]})
+        let id = req.params.usuarioId
+       let usuarioEn= []
 
+        for (let i = 0; i < dataBase.posteos.length; i++) {
+           if(id == dataBase.posteos[i].usuarioId){
+            usuarioEn.push(dataBase.posteos[i])
+           }
+        }
+        console.log(usuarioEn);
+        res.render("detalleUsuario", {usuario: usuarioEn})
     },
     perfil: function (req, res) {
-        let posteos = dataBase.posteos.filter (x=>x.idUser===dataBase.usuario[3].id)
-        return res.render("miPerfil", {usuario: dataBase.usuario[3],posts:posteos})
+        let id = req.params.idUser
+        let usuarioEn = []
+       
+       for (let i = 0; i < dataBase.posteos; i++) {
+        if (id == dataBase.posteos[i].idUser) {
+            usuarioEn.push(dataBase.posteos[i])
+            
+        }
+
+        
+       }
+        return res.render("miPerfil", {usuario: usuarioEn})
 
 
     },
