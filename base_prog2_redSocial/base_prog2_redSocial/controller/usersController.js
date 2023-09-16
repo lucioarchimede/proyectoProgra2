@@ -34,18 +34,16 @@ const usersController = {
         res.render("detalleUsuario", {usuario: usuarioEn})
     },
     perfil: function (req, res) {
-        let id = req.params.idUser
+        let usuario = 'MatiGimenez'
         let usuarioEn = []
-       
-       for (let i = 0; i < dataBase.posteos; i++) {
-        if (id == dataBase.posteos[i].idUser) {
-            usuarioEn.push(dataBase.posteos[i])
-            
-        }
-
-        
-       }
-        return res.render("miPerfil", {usuario: usuarioEn})
+ 
+         for (let i = 0; i < dataBase.posteos.length; i++) {
+            if(usuario == dataBase.posteos[i].nombreUsuario){
+             usuarioEn.push(dataBase.posteos[i])
+            }
+         }
+ 
+        res.render("miPerfil", {usuario: usuarioEn})
 
 
     },

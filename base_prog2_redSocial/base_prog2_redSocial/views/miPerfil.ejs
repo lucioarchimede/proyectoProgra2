@@ -9,7 +9,7 @@
     <main>
         <div class="user-detail container">
             <section class="top main-content">
-                <img class="profile" src="https://via.placeholder.com/100x100" alt="">
+                <img class="profile" src="<%= usuario[0].fotoPerfil %>" alt="">
                 <div class="info-usuario">
                     <p><%= usuario.nombreUsuario %></p> 
                     <a class="follow" href="editarPerfil"><i class="fa-solid fa-user-gear"></i></a>
@@ -26,7 +26,7 @@
     
                     <article class="post">
                         <a href="/detallePost">
-                            <img src=",<%= usuario[i].imagen %>" alt="">
+                            <img src="<%= usuario[i].imagen%>" alt="">
                         </a>
                     </article>
         </div>
