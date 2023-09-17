@@ -24,6 +24,20 @@ const postController = {
 
     },
 
+    searchResults: function (req, res) {
+        let nombre = req.params.nombreUsuario; 
+        let usuarioEn = []
+  
+        for (let i = 0; i < dataBase.posteos.length; i++) {
+           if(nombre == dataBase.posteos[i].nombreUsuario){
+            usuarioEn.push(dataBase.posteos[i])
+           }
+        }
+  
+        res.render('resultadoBusqueda', {datos: usuarioEn}); 
+    }
+
+
 }
 
 module.exports = postController

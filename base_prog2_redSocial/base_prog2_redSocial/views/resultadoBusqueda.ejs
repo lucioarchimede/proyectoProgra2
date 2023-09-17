@@ -15,9 +15,31 @@
    
     <main>
         <section class="center main-content">
-        <h1>Resultados de búsqueda.</h1>
-        <p>Construir la vista.</p>
+        <h1 class="h1-register">Resultados de búsqueda:</h1>
         </section>
+        <div class="user-detail container">
+            <section class="top main-content">
+                <img class="profile" src="https://i1.wp.com/www.masrojo.com.ar/home/wp-content/uploads/gimenez.jpeg?fit=1200%2C800&ssl=1" alt="">
+                <div class="info-usuario">
+                    <h1 class="h1-register"><%= datos[0].nombreUsuario %></h1> 
+                    <a class="follow" href="">Seguir</a>
+                    <ul class="meta">
+                        <li>2 post</li>
+                        <li>1856 seguidores</li>
+                        <li>357 seguidos</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="bottom">
+                <article class="post">
+                <% for( let i = 0; i < datos.length; i++ ) { %>
+                    <a href="/posteos/detalle/<%= datos[i].id %>">
+                        <img src="<%= datos[i].imagen %>" alt="">
+                    </a>
+                    <% } %>
+                </article>
+            </section>
+        </div>
     </main>
     <footer class="main-footer">
         <%- include('./partials/footer') %>

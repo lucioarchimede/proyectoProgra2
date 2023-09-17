@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/posteosController')
+const controller = require('../controller/postController')
 
-router.get('/agregar',controller.agregarPost)
+router.get('/agregar',controller.guardarPost)
 
-router.get('/detalle/:id',controller.detallePost)
+router.get('/detalle/:id',controller.detalle)
 
-router.get('/buscar',controller.searchResults)
+router.get('/buscar/:nombreUsuario',controller.searchResults)
 
 module.exports = router;

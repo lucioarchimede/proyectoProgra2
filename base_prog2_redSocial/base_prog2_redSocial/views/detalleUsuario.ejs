@@ -14,7 +14,7 @@
     <main>
         <div class="user-detail container">
             <section class="top main-content">
-                <img class="profile" src="https://via.placeholder.com/100x100" alt="">
+                <img class="profile" src="<%= usuario[0].fotoPerfil %>" alt="">
                 <div class="info-usuario">
                     <p> <%= usuario[0].nombreUsuario %> </p> 
                     <a class="follow" href="">seguir</a>
@@ -28,7 +28,7 @@
             <section class="bottom">
                 <article class="post">
                     <% for( let i = 0; i < usuario.length; i++ ) { %>
-                        <a href="detallePost.ejs" <%= usuario[i].id %>>
+                        <a href="/posts/detalle/id<%= usuario[i].id %>" >
                             <img src="<%= usuario[i].imagen %>" alt="">
                         </a>
                         <% } %>
