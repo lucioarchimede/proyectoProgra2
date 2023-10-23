@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes){
-            let alias = "Movie"; //Es el nombre con el que identificaremos al modelo cuando lo necesitemos en un controlador.
+            let alias = "Post"; //Es el nombre con el que identificaremos al modelo cuando lo necesitemos en un controlador.
             
             let cols = {
                  id: {
@@ -31,6 +31,6 @@ module.exports = function(sequelize, dataTypes){
             }
         
             let post = sequelize.define(alias, cols, conf);
-            
+
             return post;
         }
