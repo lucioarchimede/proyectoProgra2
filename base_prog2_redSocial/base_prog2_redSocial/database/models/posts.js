@@ -16,10 +16,10 @@ module.exports = function(sequelize, dataTypes){
                 textoDescriptivo: {
                     type: dataTypes.INTEGER
                 },
-                created_at:{
+                createdAt:{
                     type: dataTypes.DATE
                 },
-                updated_at:{
+                updatedAt:{
                     type: dataTypes.DATE
                 }
             }
@@ -27,7 +27,7 @@ module.exports = function(sequelize, dataTypes){
             let conf = {
                 tableName: "posteos",
                 timestamps: true,
-                underscored: true,
+            //     underscored: true,
             }
         
             let post = sequelize.define(alias, cols, conf);

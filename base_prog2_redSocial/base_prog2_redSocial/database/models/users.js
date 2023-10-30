@@ -16,16 +16,16 @@ module.exports = function(sequelize, dataTypes){
                 fotoPerfil: {
                     type: dataTypes.STRING
                 },
-                fechaRegistro:{
+                fechaNacimiento:{
                     type: dataTypes.STRING
                 },
                 dni:{
                         type: dataTypes.STRING
                     },
-                created_at:{
+                createdAt:{
                     type: dataTypes.DATE
                 },
-                updated_at:{
+                updatedAt:{
                     type: dataTypes.DATE
                 }
             }

@@ -1,17 +1,26 @@
 const dataBase = require('../db/data');
-
+const db = require ('../database/models')
+const post = db.Post
 
 
 const indexController = {
     showIndex: function (req, res) {
-
-        return res.render('index', {
-            usuario: dataBase.usuario,
-            productos: dataBase.productos,
-            logueado: dataBase.usuario.logueado,
-            posts: dataBase.posteos,
+        post.findAll()
+        .then((result)=>{
+            res.send(result)
 
         })
+        .catch((error)=>{
+             console.log(error)
+        })
+
+            // return res.render('index', {
+            //     usuario: dataBase.usuario,
+            //     productos: dataBase.productos,
+            //     logueado: dataBase.usuario.logueado,
+            //     posts: dataBase.posteos,
+
+            // })
     },
     showLogin: function (req, res) {
         return res.render('login', {
