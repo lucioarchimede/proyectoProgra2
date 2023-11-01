@@ -32,6 +32,19 @@ module.exports = function(sequelize, dataTypes){
             }
         
             let comment = sequelize.define(alias, cols, conf);
-        
+            //relaciones
+
+            Comentario.associate = function(models) {
+            // Un perfil --> muchos comentarios
+                Comentario.belongsTo(models.User , {
+                    as: "usuario",
+                    foreignKey: "idUsuario"
+                }),
+            // Un producto --> muchos comentarios
+                Comentario.belongsTo(models.Producto , {
+                    as: "posteo",
+                    foreignKey: "idPost"
+                })
+            };
             return comment;
         }

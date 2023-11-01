@@ -31,6 +31,20 @@ module.exports = function(sequelize, dataTypes){
             }
         
             let post = sequelize.define(alias, cols, conf);
+           
+            poat.associate = function(models) {
+                // Un perfil --> muchos productos
+                Producto.belongsTo(models.User , {
+                    as: "usuario",
+                    foreignKey: "idUsuario"
+                }),
+                // Un producto --> muchos comentarios
+                Producto.hasMany(models.Comment, {
+                    as: "comentario",
+                    foreignKey: "idPost"
+                })
+            };
+            
 
             return post;
         }
