@@ -37,20 +37,20 @@ module.exports = function(sequelize, dataTypes){
                 underscored: true,
             }
         
-            let user = sequelize.define(alias, cols, conf);
+            let User = sequelize.define(alias, cols, conf);
 
             //relaciones
-            user.associate = function(models) {
+            User.associate = function(models) {
             // Un perfil --> muchos productos
-                Perfil.hasMany(models.Post, {
-                    as: "posteo",
+                User.hasMany(models.Post, {
+                    as: "usuario_posteo",
                     foreignKey: "idUsuario"
-                }),
+                });
             // Un perfil --> muchos comentarios
-                Perfil.hasMany(models.Comment, {
-                    as: "comentario",
+                User.hasMany(models.comment, {
+                    as: "usuario_comentario",
                     foreignKey: "idUsuario"
                 })
             };
-            return user;
+            return User;
     }

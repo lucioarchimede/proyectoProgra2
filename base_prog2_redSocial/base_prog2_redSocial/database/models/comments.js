@@ -31,18 +31,18 @@ module.exports = function(sequelize, dataTypes){
                 underscored: true,
             }
         
-            let comment = sequelize.define(alias, cols, conf);
+            const comment = sequelize.define(alias, cols, conf);
             //relaciones
 
-            Comentario.associate = function(models) {
+            comment.associate = function(models) {
             // Un perfil --> muchos comentarios
-                Comentario.belongsTo(models.User , {
-                    as: "usuario",
+                comment.belongsTo(models.User , {
+                    as: "comentario_usuario",
                     foreignKey: "idUsuario"
-                }),
+                });
             // Un producto --> muchos comentarios
-                Comentario.belongsTo(models.Producto , {
-                    as: "posteo",
+                comment.belongsTo(models.Post , {
+                    as: "comentario_posteo",
                     foreignKey: "idPost"
                 })
             };
