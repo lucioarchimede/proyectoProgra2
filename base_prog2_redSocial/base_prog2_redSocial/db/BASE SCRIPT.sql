@@ -3,11 +3,11 @@ USE dbtrabajo;
 /*Tabla de usuarios */
 CREATE TABLE usuarios (
     id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT ,
-    email VARCHAR(255) NOT NULL,
+    usuario VARCHAR(255) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE, 
     contraseña VARCHAR(255) NOT NULL,
     fotoPerfil VARCHAR(255),
-    fechaRegistro DATE,
-    dni INT NOT NULL,
+    fechaNacimiento DATE,
     createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deletedAt TIMESTAMP NULL
