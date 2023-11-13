@@ -31,6 +31,7 @@ module.exports = function(sequelize, dataTypes){
                 underscored: true,
             }
         
+<<<<<<< HEAD
             let Comment = sequelize.define(alias, cols, conf);
             //relaciones
 
@@ -38,11 +39,25 @@ module.exports = function(sequelize, dataTypes){
             // Un perfil --> muchos comentarios
                 Comment.belongsTo(models.User , {
                     as: "usuario",
+=======
+            const comment = sequelize.define(alias, cols, conf);
+            //relaciones
+
+            comment.associate = function(models) {
+            // Un perfil --> muchos comentarios
+                comment.belongsTo(models.User , {
+                    as: "comentario_usuario",
+>>>>>>> d48fd5264e609cad46b0787125306f7d970abbfd
                     foreignKey: "idUsuario"
-                }),
+                });
             // Un producto --> muchos comentarios
+<<<<<<< HEAD
                 Comment.belongsTo(models.Post , {
                     as: "posteo",
+=======
+                comment.belongsTo(models.Post , {
+                    as: "comentario_posteo",
+>>>>>>> d48fd5264e609cad46b0787125306f7d970abbfd
                     foreignKey: "idPost"
                 })
             };
