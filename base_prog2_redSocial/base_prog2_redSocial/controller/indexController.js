@@ -24,7 +24,7 @@ const indexController = {
     },
     showLogin: function (req, res) {
         return res.render('login', {
-            usuario: dataBase.usuario,
+            usuario: db.usuario,
             logueado: dataBase.usuario.logueado
         })
     },
