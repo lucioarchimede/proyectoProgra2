@@ -1,5 +1,6 @@
 const dataBase = require ('../db/data');
 const db = require ('../database/models')
+const bcrypt = require('bcryptjs');
 const post = db.Post
 const comment = db.Comment
 const user = db.User
@@ -28,13 +29,19 @@ const usersController = {
         let filtrado = {
            where:[{email:emailBuscar}]
         }
-        
+        res.send({
+            emailBuscar
+        }
+        )
        user.findOne(filtrado)
        .then(function (resultado) {
+        
            if (resultado != null) {
                errors.message= 'El email ingresado ya existe';
                res.locals.errors = errors;
            return res.render('register')
+           }else{
+            
            }
        })
        .catch(function (error) {
@@ -46,12 +53,12 @@ const usersController = {
             res.locals.errors = errors;
             return res.render('register')
 
-        } else if (req.body.contraseña == ''){
+        } else if (req.body.password == ''){
             errors.message= 'La contraseña no puede ser vacía';
             res.locals.errors = errors;
             return res.render('register')
 
-        }else if (req.body.contraseña.length <=3){
+        }else if (req.body.password.length <=3){
             errors.message= 'La contraseña debe tener más de 3 caracteres';
             res.locals.errors = errors;
             return res.render('register')
@@ -66,15 +73,15 @@ const usersController = {
             let guardarPerfil = {
                 usuario: datos.usuario,
                 email: datos.email,
-                contraseña: bcrypt.hashSync(datos.contraseña, 10),
-                fotoPerfil: foto_perfil_store, // opcional
+                contrasenia: bcrypt.hashSync(datos.password, 10),
+                fotoPerfil: fotoPerfilStore, // opcional
                 fechaNacimiento: datos.fecha_nacimiento,
                 remember_token: ""
             };
 
-            db.Perfil.create(guardarPerfil)
+            db.user.create(guardarPerfil)
             .then(function(result) {
-                return res.redirect('/profile/login');
+                return res.redirect('/users/login');
             })
             .catch(function(error) {
                 console.log(error);

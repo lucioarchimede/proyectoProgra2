@@ -34,7 +34,7 @@ module.exports = function(sequelize, dataTypes){
                 // underscored: true,
                 tableName: "usuarios",
                 timestamps: true,
-                underscored: true,
+                underscored: false,
             }
         
             let User = sequelize.define(alias, cols, conf);
@@ -43,20 +43,15 @@ module.exports = function(sequelize, dataTypes){
             User.associate = function(models) {
             // Un perfil --> muchos productos
                 User.hasMany(models.Post, {
-<<<<<<< HEAD
+
                     as: "posteo",
-=======
                     as: "usuario_posteo",
->>>>>>> d48fd5264e609cad46b0787125306f7d970abbfd
                     foreignKey: "idUsuario"
                 });
             // Un perfil --> muchos comentarios
                 User.hasMany(models.Comment, {
-<<<<<<< HEAD
                     as: "comentario",
-=======
                     as: "usuario_comentario",
->>>>>>> d48fd5264e609cad46b0787125306f7d970abbfd
                     foreignKey: "idUsuario"
                 })
             };
