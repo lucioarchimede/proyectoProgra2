@@ -2,15 +2,13 @@ var express = require('express');
 var router = express.Router();
 const usersController = require("../controller/usersController")
 
-router.get('detalle/:idUser', usersController.detalle)
-router.get("/miPerfil/:idUser", usersController.perfil)
-router.get("/editar/idUser", usersController.edit)
+// router.get('detalle/:idUser', usersController.detalle)
+// router.get("/miPerfil/:idUser", usersController.perfil)
+// router.get("/editar/idUser", usersController.edit)
 
-router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Login' });
-});
+router.get('/login', usersController.login)
 
-router.post('/', usersController.login);
+router.post('/', usersController.loginPost);
 
 router.post("/login", usersController.login);
 
@@ -18,17 +16,17 @@ router.get('/register', usersController.register)
 
 router.post('/register',usersController.store );
 
-router.post('/edit',usersController.edit );
+// router.post('/edit',usersController.edit );
 
-router.get('/perfil',usersController.perfil);
-
-
-router.get('/detalleUsuario',usersController.detalle);
+// router.get('/perfil',usersController.perfil);
 
 
-router.get('/editarPerfil', function(req, res, next) {
-  res.render('editarPerfil', { title: 'Editar perfil' });
-});
+// router.get('/detalleUsuario',usersController.detalle);
+
+
+// router.get('/editarPerfil', function(req, res, next) {
+//   res.render('editarPerfil', { title: 'Editar perfil' });
+// });
 
 
 /* GET users listing. */

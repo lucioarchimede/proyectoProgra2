@@ -8,9 +8,9 @@ const indexController = require('../controller/indexController');
 
 
 
-router.get('/index',indexController.showIndex );
+router.get('/index',indexController.home );
 
-router.post('/index',indexController.home);
+// router.post('/index',indexController.home);
 
 
 

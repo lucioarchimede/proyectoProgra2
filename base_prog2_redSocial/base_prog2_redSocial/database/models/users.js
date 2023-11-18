@@ -13,14 +13,14 @@ module.exports = function(sequelize, dataTypes){
                 email: {
                     type: dataTypes.STRING
                 },
-                contraseña:{
+                password:{
                     type: dataTypes.STRING
                 },
                 fotoPerfil: {
                     type: dataTypes.STRING
                 },
                 fechaNacimiento:{
-                    type: dataTypes.STRING
+                    type: dataTypes.DATE
                 },
                 createdAt:{
                     type: dataTypes.DATE
