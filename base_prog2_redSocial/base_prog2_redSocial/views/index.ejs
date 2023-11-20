@@ -5,9 +5,9 @@
 
     <body>
         <% if (locals.user == undefined) { %>
-            <%- include('./partials/headerLogueado') %> 
+            <%- include('./partials/header') %> 
         <% } else { %>
-         <%- include('./partials/header')  %>
+         <%- include('./partials/headerLogueado')  %>
         <% } %>
 
             <main>
@@ -18,13 +18,13 @@
                                 <img src="<%= %>" alt="">
                                 <h4>
                                     <a href="/detalleUsuario">
-                                        <%= posts[i].nombreUsuario %>
+                                        <%= posts[i].usuario %>
                                     </a>
                                 </h4>
                             </div>
                             <div class="post-body">
                                 <a href=" <%='/detallePost/'+ posts[i].id %> ">
-                                    <img src="<%= posts[i].imagen %>" alt="" >
+                                    <img src="<%= posts[i].nombreImagen %>" alt="" >
                                 </a>
                             </div>
                             <ul class="post-reacciones">

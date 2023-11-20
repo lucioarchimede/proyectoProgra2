@@ -36,9 +36,17 @@ const indexController = {
     //         logueado: dataBase.usuario.logueado
     //     })
     // },
-    home: function (req, res) {
-        const posts = post.findAll()
-        res.render('/', {'posts': posts})
+    home: async function (req, res) {
+        let posts = await post.findAll()
+
+        for (let post of posts){
+            let userPosts = await user.findByPk(post.idUsuario)
+            // const comments = comment.findByPk(post.id)
+            post.comments = []
+            post.usuario = userPosts.usuario
+        }
+       
+        res.render('index', {'posts': posts})
         // let usuarios = dataBase.usuario;
         // for (let i = 0; i < usuarios.length; i++) {
         //     if (usuarios[i].email == req.body.email) {

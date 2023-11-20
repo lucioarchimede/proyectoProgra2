@@ -8,9 +8,10 @@ const indexController = require('../controller/indexController');
 
 
 
-router.get('/index',indexController.home );
+router.get('/',indexController.home );
 
-// router.post('/index',indexController.home);
+
+router.post('/',usersController.loginPost);
 
 
 

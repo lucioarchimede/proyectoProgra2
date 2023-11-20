@@ -8,9 +8,8 @@ const usersController = require("../controller/usersController")
 
 router.get('/login', usersController.login)
 
-router.post('/', usersController.loginPost);
+router.post('/login', usersController.loginPost);
 
-router.post("/login", usersController.login);
 
 router.get('/register', usersController.register)
 
@@ -18,7 +17,7 @@ router.post('/register',usersController.store );
 
 // router.post('/edit',usersController.edit );
 
-// router.get('/perfil',usersController.perfil);
+// router.get('/perfil',usersController.perfil); req.session.user busque post.findAll(pos)
 
 
 // router.get('/detalleUsuario',usersController.detalle);

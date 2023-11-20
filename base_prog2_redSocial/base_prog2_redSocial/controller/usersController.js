@@ -38,7 +38,7 @@ const usersController = {
             return res.render('login')
         } else {
         
-            perfil.findOne(filtrado)
+            user.findOne(filtrado)
             .then((result) => {
 
                 if (result != null) {
