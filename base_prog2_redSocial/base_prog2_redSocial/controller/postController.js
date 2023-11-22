@@ -34,7 +34,7 @@ const postController = {
         
         let errors = {}
         post.findAll({
-            where: [{ "ACA va algo" : { [op.like]: "%" + searchResults + "%" } }],
+            where: [{ nombreImagen : { [op.like]: "%" + searchResults + "%" } }],
             include:[{all:true, nested: true}], order: [["createdAt","DESC"]]
         })
             .then((datos) => {
