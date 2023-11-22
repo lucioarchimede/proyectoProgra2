@@ -15,14 +15,14 @@ router.get('/register', usersController.register)
 
 router.post('/register',usersController.store );
 
-router.get("/logout", usersController.logout)
+router.get('/logout', usersController.logout)
 
 // router.post('/edit',usersController.edit );
 
 // router.get('/perfil',usersController.perfil); req.session.user busque post.findAll(pos)
 
 
-// router.get('/detalleUsuario',usersController.detalle);
+router.get('/detalleUsuario/:id',usersController.detalle);
 
 
 // router.get('/editarPerfil', function(req, res, next) {

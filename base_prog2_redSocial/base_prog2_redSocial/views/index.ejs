@@ -17,8 +17,8 @@
                             <div class="info-usuario">
                                 <img src="<%= %>" alt="">
                                 <h4>
-                                    <a href="/detalleUsuario">
-                                        <%= posts[i].usuario %>
+                                    <a href="/users/detalleUsuario/<%= posts[i].usuario.id %>">
+                                        <%= posts[i].usuario.usuario %>
                                     </a>
                                 </h4>
                             </div>
@@ -36,12 +36,13 @@
                                 </li>
                             </ul>
                             <div class="post-comentarios">
+                                <p><h3 class="pieDeFoto"><%= posts[i].usuario.usuario %>: <%= posts[i].textoDescriptivo %></h3></p>
                                 <h4>Comentarios</h4>
                                 <ul>
-                                    <% for( let j = 0; j < posts[i].comments.length; j++ ) { %>
+                                    <% for( let j = 0; j < posts[i].comentario.length; j++ ) { %>
                                         <li>
-                                            <a href="/detalleUsuario"><%= posts[i].comments[j].nomComent %></a>
-                                            <span><%= posts[i].comments[j].textoComentario %></span>
+                                            <a href="/users/detalleUsuario/<%=posts[i].comentario[j].idUsuario  %>"><%= posts[i].comentario[j].usuario.usuario %></a>
+                                            <span><%= posts[i].comentario[j].textoComentario %></span>
                                         </li>
                                     
                                     <% } %>

@@ -37,16 +37,27 @@ const indexController = {
     //     })
     // },
     home: async function (req, res) {
-        let posts = await post.findAll()
+        
+        let filtro = {
+            include:[{all:true, nested: true}], order: [["createdAt","DESC"]]
+           };
+           post.findAll(filtro)
+           .then((result) => {
+            // return res.send(result)
+            return res.render("index",{posts: result})
+           }).catch((err) => {
+            console.log(err)
+           });
 
-        for (let post of posts){
-            let userPosts = await user.findByPk(post.idUsuario)
-            // const comments = comment.findByPk(post.id)
-            post.comments = []
-            post.usuario = userPosts.usuario
-        }
+        // for (let post of posts){
+        //     let userPosts = await user.findByPk(post.idUsuario)
+        //     post.comments = []
+        //     post.usuario = userPosts.usuario
+        // }
+
        
-        res.render('index', {'posts': posts})
+       
+        // res.render('index', {'posts': posts})
         // let usuarios = dataBase.usuario;
         // for (let i = 0; i < usuarios.length; i++) {
         //     if (usuarios[i].email == req.body.email) {
@@ -67,7 +78,7 @@ const indexController = {
         //         logueado: dataBase.usuario.logueado
         //     })
         // }
-    }
+    },
 }
 
 module.exports = indexController

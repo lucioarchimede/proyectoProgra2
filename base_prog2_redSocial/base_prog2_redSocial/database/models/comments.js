@@ -28,7 +28,6 @@ module.exports = function(sequelize, dataTypes){
                 // underscored: true,
                 tableName: "comentarios",
                 timestamps: true,
-                underscored: true,
             }
         
             let Comment = sequelize.define(alias, cols, conf);
@@ -42,7 +41,7 @@ module.exports = function(sequelize, dataTypes){
                 });
             // Un producto --> muchos comentarios
                 Comment.belongsTo(models.Post , {
-                    as: "comentario_posteo",
+                    as: "comentarioPosteo",
                     foreignKey: "idPost"
                 })
             };

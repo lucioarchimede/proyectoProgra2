@@ -146,24 +146,24 @@ const usersController = {
             console.log('errorgeneral ', err)
 
         }
-        
-        // user.findOne(filtrado)
-        //     .then(function (resultado) {
-
-        //         if (resultado != null) {
-        //             errors.message = 'El email ingresado ya existe';
-        //             res.locals.errors = errors;
-        //             return res.render('register')
-        //         } else {
-
-        //         }
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     })
-
-
     },
+    logout: function (req, res) {
+        res.clearCookie("idUsuario");
+        req.session.user = undefined
+        return res.render('login')
+    },
+    detalle: function (req,res){
+        let id = req.params.id
+        //  let usuarioEncontrado = []
+   
+          usuarios.findByPk(id, {include:[{all:true, nested: true}], order: [["createdAt","DESC"]]})
+          .then(function(result) {
+             res.send(result);
+             res.render("detalleUsuario", {usuario: result})   
+          })
+          .catch(error => console.log(error))
+    },
+
     
     // edit: function (req, res) {
     //     console.log("body: " + req.body.email)
@@ -196,11 +196,7 @@ const usersController = {
 
 
     // },
-logout: function (req, res) {
-    res.clearCookie("idUsuario");
-    req.session.user = undefined
-    return res.render('login')
-},
+
 }
 
 module.exports = usersController

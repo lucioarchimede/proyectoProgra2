@@ -45,13 +45,11 @@ module.exports = function(sequelize, dataTypes){
                 User.hasMany(models.Post, {
 
                     as: "posteo",
-                    as: "usuario_posteo",
                     foreignKey: "idUsuario"
                 });
             // Un perfil --> muchos comentarios
                 User.hasMany(models.Comment, {
                     as: "comentario",
-                    as: "usuario_comentario",
                     foreignKey: "idUsuario"
                 })
             };
