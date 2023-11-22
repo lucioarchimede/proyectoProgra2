@@ -197,7 +197,7 @@ const usersController = {
 
     // },
 logout: function (req, res) {
-    res.clearCookie("usuarioId");
+    res.clearCookie("idUsuario");
     req.session.user = undefined
     return res.render('login')
 },
