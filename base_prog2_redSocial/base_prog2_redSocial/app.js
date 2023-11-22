@@ -41,6 +41,27 @@ app.use(function(req, res, next){
   return next();
 })
 
+/**Configuracion de cookie */
+app.use(function (req,res,next) {
+  /**Si existe la cokkie del usuario y no existe el usuario en session*/
+  if (req.cookies.usuarioId != undefined && req.session.user== undefined) {
+    let idUsuarioCookie=req.cookies.usuarioId;
+    db.User.findByPk(idUsuarioCookie)
+    .then((user)=>{
+      /*Cargamos el usuario encontrado en la session*/
+      req.session.user=user.dataValues;
+      /**cargar el usuario en locals */
+      res.locals.user=user.dataValues;
+      return next();
+    })
+    .catch((err)=>console.log(err))
+  }else{
+    return next();
+  }
+})
+
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postRouter)

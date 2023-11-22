@@ -1,4 +1,9 @@
-const dataBase = require ('../db/data');
+const dataBase = require('../db/data');
+const db = require('../database/models')
+const bcrypt = require('bcryptjs');
+const post = db.Post
+const comment = db.Comment
+const user = db.User
 
 
 const postController = {
@@ -25,20 +30,51 @@ const postController = {
     },
 
     searchResults: function (req, res) {
-        let nombre = req.params.nombreUsuario; 
-        let usuarioEn = []
-  
-        for (let i = 0; i < dataBase.posteos.length; i++) {
-           if(nombre == dataBase.posteos[i].nombreUsuario){
-            usuarioEn.push(dataBase.posteos[i])
-           }
-        }
-  
-        res.render('resultadoBusqueda', {datos: usuarioEn}); 
-    }
+        let searchResults = req.query.searchResults;
+        
+        let errors = {}
+        post.findAll({
+            where: [{ "ACA va algo" : { [op.like]: "%" + searchResults + "%" } }],
+            include:[{all:true, nested: true}], order: [["createdAt","DESC"]]
+        })
+            .then((datos) => {
+                
+            if (datos.length == 0) {
+                errors.message = "No hay resultados para su busqueda"
+                res.locals.errors = errors
+                return res.render("resultadoBusqueda")
 
+            }else{ 
+                return res.render('resultadoBusqueda', { data: datos })
+            }
+        })
+        .catch((error) => {
+            console.log(error)
+            return res.send(error)
+        })
+}
 
 }
+
+
+
+
+
+
+
+
+
+     //*   let nombre = req.params.nombreUsuario; 
+       //*  let usuarioEn = []
+  
+      //*   for (let i = 0; i < dataBase.posteos.length; i++) {
+        //*    if(nombre == dataBase.posteos[i].nombreUsuario){
+       //*      usuarioEn.push(dataBase.posteos[i])
+       //*     }
+     //*    }
+  
+       //*  res.render('resultadoBusqueda', {datos: usuarioEn}); 
+  //*   } 
 
 module.exports = postController
 

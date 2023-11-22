@@ -196,8 +196,12 @@ const usersController = {
 
 
     // },
+logout: function (req, res) {
+    res.clearCookie("usuarioId");
+    req.session.user = undefined
+    return res.render('login')
+},
 }
-
 
 module.exports = usersController
 
