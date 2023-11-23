@@ -16,7 +16,11 @@
             <section class="top main-content">
                 <img class="profile" src="<%= usuario.fotoPerfil %>" alt="">
                 <div class="info-usuario">
+<<<<<<< HEAD
                     <p> <%= usuario.nombreUsuario %> </p> 
+=======
+                    <p> <%= usuario.email %> </p> 
+>>>>>>> 8ace60b8be854af3fcf793df9217f7126928d7a9
                     <a class="follow" href="">seguir</a>
                     <ul class="meta">
                         <li>2 post</li>
@@ -27,9 +31,9 @@
             </section>
             <section class="bottom">
                 <article class="post">
-                    <% for( let i = 0; i < usuario.length; i++ ) { %>
-                        <a href="/posts/detalle/id<%= usuario[i].id %>" >
-                            <img src="<%= usuario[i].imagen %>" alt="">
+                    <% for( let i = 0; i < usuario.posteo.length; i++ ) { %>
+                        <a href="/posts/detalle/<%= usuario.posteo.id %>" >
+                            <img src="<%= usuario.posteo[i].nombreImagen %>" alt="">
                         </a>
                         <% } %>
                 </article>

@@ -4,8 +4,13 @@ const bcrypt = require('bcryptjs');
 const posts = require('../database/models/posts');
 const post = db.Post
 const comment = db.Comment
+<<<<<<< HEAD
 const user = db.User
 const op = db.Sequelize.Op
+=======
+const user = db.User;
+const op = db.Sequelize.Op;
+>>>>>>> 8ace60b8be854af3fcf793df9217f7126928d7a9
 
 
 const postController = {
@@ -53,22 +58,23 @@ const postController = {
     
 
     searchResults: function (req, res) {
-        let searchResults = req.query.searchResults;
-        
+        let searchResults = req.body.searchResults;
+        console.log(searchResults)
         let errors = {}
         post.findAll({
             where: [{ textoDescriptivo : { [op.like]: "%" + searchResults + "%" } }],
             include:[{all:true, nested: true}], order: [["createdAt","DESC"]]
         })
-            .then((datosEncontrados) => {
-                
-            if (datosEncontrados.length == 0) {
+            .then((datos) => {
+              return res.send(datos)  
+            if (datos.length == 0) {
                 errors.message = "No hay resultados para su busqueda"
                 res.locals.errors = errors
-                return res.render("resultadoBusqueda")
+                return res.render('resultadoBusqueda', { datos: [] })
+                
 
             }else{ 
-                return res.render('resultadoBusqueda', { datos: datosEncontrados })
+                return res.render('resultadoBusqueda', { datos: datos })
             }
         })
         .catch((error) => {

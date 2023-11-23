@@ -11,7 +11,7 @@
             <section class="top main-content">
                 <img class="profile" src="<%= datos.fotoPerfil %>" alt="">
                 <div class="info-usuario">
-                    <p><%= datos.nombreUsuario %></p> 
+                    <p><%= datos.usuario %></p> 
                     <a class="follow" href="editarPerfil"><i class="fa-solid fa-user-gear"></i></a>
                     <ul class="meta">
                         <li> <%=datos.posteo.length %> posts </li>
@@ -25,7 +25,11 @@
                 <section class="bottom">
     
                     <article class="post">
+<<<<<<< HEAD
                         <a href="<%'posts/detallePost/'+ datos.posteo[i].id%>">
+=======
+                        <a href="<%'/detallePost/'+ datos.posteo[i]%>">
+>>>>>>> 8ace60b8be854af3fcf793df9217f7126928d7a9
                             <img src="<%= datos.posteo[i].nombreImagen%>" alt="">
                         </a>
                     </article>
