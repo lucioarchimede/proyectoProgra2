@@ -11,38 +11,59 @@
     
    
     <main>
-        <div class="user-detail container">
-            <h1>Resultados de búsqueda</h1>
-            <section class="bottom">
-                <% if (post.length> 0) { %>
-                    <% for ( let i=0 ; i < post.length; i++) { %>
-                        <div>
-                            <section>
-
-
-                                <figure>
-                                    <a href="/posts/detalle/<%=post[i].id%>">
-                                        <img src="<%=post[i].nombreImagen%>"
-                                            alt="Imagen de <%post[i].textoDescriptivo%>"> </a>
-                                </figure>
-                                <article>
-
-                                    <a href="/users/detalle/<%= post[i].usuario.idUsuario%>">
-                                        Subido por: <%= post[i].usuario.usuario %>
-                                    </a>
-
-                                </article>
-
-                            </section>
-                        </div>
-                        <% } %>
-                            <% } else { %>
-                                <h1>No encontramos coincidencias con tu busqueda</h1>
-                                <% } %>
-
-
-            </section>
-        </div>
+        <main>
+            <section class="center main-content">
+                
+                <% for( let i = 0; i < datos.length; i++ ) { %>
+                
+                <article class="post">
+                    <div class="info-usuario ">
+                        
+                        <img src="<%= datos[i].usuario.fotoPerfil %>" alt="" class="fotoPerfil">
+                        
+                        <h4>
+                            <a href="users/detalle/<%= datos[i].idUsuario %>"><%= datos[i].usuario.usuario %></a>
+                        </h4>
+                    </div>
+                    <div class="post-body">
+                        <a href="/posts/detalle/<%= datos[i].id %>">
+                            <img src= <%= datos[i].nombreImagen %> alt="">
+                        </a>
+                    </div>
+                    <ul class="post-reacciones">
+                        <li>
+                            <i class="fa-regular fa-heart"></i>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-comment"></i>
+                        </li>
+                    </ul>
+    
+    
+                    <div class="post-comentarios">
+                        <p><h3 class="textoDescriptivo"><%= datos[i].usuario.usuario %>: <%= datos[i].textoDescriptivo %></h3></p>
+                        <h4>Comentarios</h4>
+                        <ul>
+    
+                            <% for( let j = 0; j < datos[i].comentario.length; j++ ) { %>
+                              
+                                <li>
+                                    <a href="/users/detalle/<%= datos[i].comentario[j].idUsuario %>"><%= datos[i].comentario[j].usuario.usuario %> :</a>
+                                    <span><%= datos[i].comentario[j].textoComentario %></span>
+                                </li>
+    
+                            <% } %>
+    
+                            <a href="/posts/detalle/<%= datos[i].id %>">Ver más...</a>
+    
+                        </ul>
+                    </div>
+                    
+                </article>
+    
+                <% } %>
+    
+            </section>    
         </main>
     <footer class="main-footer">
         <%- include('./partials/footer') %>

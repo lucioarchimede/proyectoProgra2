@@ -53,38 +53,32 @@ const postController = {
     
 
     searchResults: function (req, res) {
-        let searchResults = req.query.search;
+        let searchResults = req.query.searchResults;
+        console.log(searchResults)
+        let errors = {}
+        post.findAll({
+            where: [{ textoDescriptivo : { [op.like]: "%" + searchResults + "%" } }],
+            include:[{all:true, nested: true}], order: [["createdAt","DESC"]]
+        })
+            .then((datos) => {
+            //   return res.send(datos)  
+            if (datos.length == 0) {
+                errors.message = "No hay resultados para su busqueda"
+                res.locals.errors = errors
+                return res.render('resultadoBusqueda', { datos: [] })
+                
 
-        let filtro = {
-            include: {
-                all: true,
-                nested: true
-            },
-            where: [
-                {
-                    [op.or]: [
-                        { textoDescriptivo: { [op.like]: '%' + searchResults + '%' } },
-                        { nombreImagen: { [op.like]: '%' + searchResults + '%' } }
-                    ]
-                }
-            ],
-            order: [["createdAt", "DESC"]]
-        }
-        post.findAll(filtro)
-            .then((result) => {
-                return res.render("resultadoBusqueda", {
-                    search: searchResults,
-                    post: result
-                })
-
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    },
+            }else{ 
+                return res.render('resultadoBusqueda', { datos: datos })
+            }
+        })
+        .catch((error) => {
+            console.log(error)
+            return res.send(error)
+        })
 }
 
-
+}
 
 
 
