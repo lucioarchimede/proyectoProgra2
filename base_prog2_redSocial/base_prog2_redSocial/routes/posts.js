@@ -2,20 +2,15 @@ const express = require('express');
 const router = express.Router();
 const postController = require('../controller/postController')
 
-router.get('/agregar',postController.guardarPost)
+
 
 router.get('/detalle/:id',postController.detalle)
 
+router.get('/agregar',postController.agregarPost)
+
 router.get('/buscar',postController.searchResults)
 
-router.get('/agregar', function(req, res, next) {
-  res.render('agregarPost', { title: 'Agregar Post' });
-
-});
-
-router.post("/guardarPost",postController.guardarPost)
-
-
+router.post('/agregar', postController.nuevoPost)
 
 router.get('/detallePost/:id',postController.detalle);
 

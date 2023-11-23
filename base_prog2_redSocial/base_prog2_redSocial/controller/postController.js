@@ -1,15 +1,40 @@
 const dataBase = require('../db/data');
 const db = require('../database/models')
 const bcrypt = require('bcryptjs');
+const posts = require('../database/models/posts');
 const post = db.Post
 const comment = db.Comment
 const user = db.User
 
 
 const postController = {
-    guardarPost: function (req, res) {
-        return res.render("index", {});
+
+    agregarPost: function(req,res){
+        return res.render('agregarPost')
     },
+
+    nuevoPost: function (req,res) {
+        let nuevoPosteo = {
+            idUsuario: req.session.user.id,
+           nombreImagen : req.body.nombreImagen,
+            textoDescriptivo: req.body.textoDescriptivo
+        }
+        
+        post.create(nuevoPosteo)
+        .then(result=> {
+            console.log(result);
+            return res.redirect('/post/agregar')
+        })
+        .catch((error)=> {
+            
+            return res.send(error)
+        })
+        
+
+        
+    },
+
+
     detalle: function (req, res) {
 
         let id = req.params.id;

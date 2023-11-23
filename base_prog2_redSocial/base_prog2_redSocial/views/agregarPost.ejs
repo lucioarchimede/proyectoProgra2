@@ -13,10 +13,12 @@
                     <h1>Nuevo Post</h1>
 
                     <p>
-                    <form action="guardarPost" method="post">
-                        <p>Nombre Imagen <input type="text" name="nombre"> </p>
-                        <p>Descripcion <input type="text" name="descripcion"> </p>
-                        <button type="submit"> Guardar </button>
+                    <form action="/post/agregar" method="post">
+                        <p><label for="URL">URL</label></p>
+                        <p><input type="nombreImagen" name="url" id="url" value="" required></p>
+                        <p><label for="textoDescriptivo">Descripcion</label></p>
+                        <p><input type="text" name="textoDescriptivo" id="textoDescriptivo"></p>
+                        <button class="botonR" type="submit">Enviar</button>
                     </form>
                     </p>
                 </section>
@@ -24,7 +26,7 @@
 
             <footer class="main-footer">
                 <%- include('./partials/footer') %>
-                </ul>
+                    </ul>
             </footer>
 
     </body>
