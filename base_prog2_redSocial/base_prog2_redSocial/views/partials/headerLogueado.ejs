@@ -4,8 +4,8 @@
             <a href="/index"><img src="/img/TUDESAN.png" class="foto"></a>
         </div>
         <div class="buscar">
-            <form action="/usuario/buscar" class="buscar">
-            <input type="text" placeholder="Buscar" required />
+            <form action="/posts/buscar" class="buscar">
+            <input type="text" placeholder="Buscar" name="searchResults" required />
             <div class="btn">
               <i class="fas fa-search icon"></i>
             </form>
@@ -14,7 +14,7 @@
         <div class="navbar-right">
             <ul class="menu">
                 <li><a class="txtH" href="/agregar"> Bienvenido <%= locals.user.usuario %></a></li>
-                <li><a class="txtH" href="/index"><i class="fa-solid fa-house"></i></a></li>
+                <li><a class="txtH" href="/"><i class="fa-solid fa-house"></i></a></li>
                 <li><a class="txtH" href="/posts/agregar"><i class="fa-regular fa-square-plus"></i></a></li>
                 <li><a class="txtH" href="/users/perfil"><i class="fa-regular fa-user"></i></a></li>
                 <li><a class="txtH" href="/users/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
