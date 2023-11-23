@@ -14,20 +14,21 @@ const postController = {
     },
 
     nuevoPost: function (req,res) {
+        console.log("nuevo post");
         let nuevoPosteo = {
             idUsuario: req.session.user.id,
            nombreImagen : req.body.nombreImagen,
             textoDescriptivo: req.body.textoDescriptivo
         }
-        
+        console.log("nuevo: ",nuevoPosteo);
         post.create(nuevoPosteo)
         .then(result=> {
             console.log(result);
-            return res.redirect('/post/agregar')
+            return res.redirect('/users/perfil')
         })
         .catch((error)=> {
-            
-            return res.send(error)
+            console.log("error ",error);
+           //* return res.send(error)
         })
         
 
