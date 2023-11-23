@@ -16,10 +16,10 @@
                 <div class="post-detail container">
                     <section class="center main-content post">
                         <div class="info-usuario">
-                            <img src="<%= %>" alt="" class="fotoPerfil">
-                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.nombreUsuario %></a></p>
+                            <img src="<%=posts.usuario.fotoPerfil %>" alt="" class="fotoPerfil">
+                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.usuario.usuario %></a></p>
                         </div>
-                        <img class="photo" src=<%= posts.imagen %> alt="">
+                        <img class="photo" src=<%= posts.nombreImagen %> alt="">
                     </section>
                     
                     
@@ -35,12 +35,12 @@
                                 <% }%>
                             </form>
                             <div>
-                       <% for( let i = 0; i < posts.comentarios; i++ ) { %>        
+                       <% for( let i = 0; i < posts.comentario.length; i++ ) { %>        
                                 <article class="comment">
-                                        <img src="<%= posts.comentarios[i].fotoDePer %>" alt="" class="fotoPerfil">
+                                        <img src="<%= posts.comentario[i].usuario.fotoPerfil %>" alt="" class="fotoPerfil">
                                     <ul class="content">
-                                        <a class="user" href="/users/detalle/<%= posts.comentarios[i].idUser %>"><%= posts.comentarios[i].nomComent %></a>
-                                        <span class="text"> <%= posts.comentarios[i].textoComentario %></span>
+                                        <a class="user" href="/users/detalle/<%= posts.comentario[i].usuario.id %>"><%= posts.comentario[i].usuario.usuario %></a>
+                                        <span class="text"> <%= posts.comentario[i].textoComentario %></span>
                                     </ul>
                                 </article>
                                 <% } %>
