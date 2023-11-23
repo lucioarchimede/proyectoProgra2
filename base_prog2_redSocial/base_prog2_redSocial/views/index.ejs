@@ -17,13 +17,13 @@
                             <div class="info-usuario">
                                 <img src="<%= %>" alt="">
                                 <h4>
-                                    <a href="/users/detalleUsuario/<%= posts[i].usuario.id %>">
+                                    <a href="/users/detalle/<%= posts[i].usuario.id %>">
                                         <%= posts[i].usuario.usuario %>
                                     </a>
                                 </h4>
                             </div>
                             <div class="post-body">
-                                <a href=" <%='/detallePost/'+ posts[i].id %> ">
+                                <a href=" <%='posts/detallePost/'+ posts[i].id %> ">
                                     <img src="<%= posts[i].nombreImagen %>" alt="" >
                                 </a>
                             </div>
@@ -41,13 +41,13 @@
                                 <ul>
                                     <% for( let j = 0; j < posts[i].comentario.length; j++ ) { %>
                                         <li>
-                                            <a href="/users/detalleUsuario/<%=posts[i].comentario[j].idUsuario  %>"><%= posts[i].comentario[j].usuario.usuario %></a>
+                                            <a href="/users/detalle/<%=posts[i].comentario[j].idUsuario  %>"><%= posts[i].comentario[j].usuario.usuario %></a>
                                             <span><%= posts[i].comentario[j].textoComentario %></span>
                                         </li>
                                     
                                     <% } %>
                                     
-                                    <a href=" <%='/detallePost/'+ posts[i].id %> ">Ver más...</a>
+                                    <a href=" <%='posts/detallePost/'+ posts[i].id %> ">Ver más...</a>
                                 </ul>
                             </div>
                         </article>

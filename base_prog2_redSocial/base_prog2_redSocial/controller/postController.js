@@ -5,6 +5,7 @@ const posts = require('../database/models/posts');
 const post = db.Post
 const comment = db.Comment
 const user = db.User
+const op = db.Sequelize.Op
 
 
 const postController = {
@@ -34,26 +35,22 @@ const postController = {
 
         
     },
-
-
-    detalle: function (req, res) {
-
-        let id = req.params.id;
-        let posteoEn = null;
-            
-        for (let i = 0; i < dataBase.posteos.length; i++) {
-            if(dataBase.posteos[i].id == id){
-            posteoEn = dataBase.posteos[i]
-                 }
-            }
     
-        res.render('detallePost',{posts: posteoEn})
-        // let posteos = dataBase.posteos.filter (x=>x.id==req.params.id) 
-        // console.log("cantidad: "+posteos.length);
-        // return res.render("detallePost", {usuario: dataBase.usuario[1],posts:posteos})
-
-
+    detalle: function(req,res){
+        let id = req.params.id;
+    
+        db.Post.findByPk(id,{
+            include:[{all:true, nested: true}]
+        })
+        .then(function(result){
+            // return res.send(result)
+            return res.render('detallePost', {posts: result})
+        })
+        .catch(function(error){
+            return res.send(error)
+        }) 
     },
+    
 
     searchResults: function (req, res) {
         let searchResults = req.query.searchResults;

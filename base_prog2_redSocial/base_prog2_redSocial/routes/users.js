@@ -22,7 +22,7 @@ router.get('/logout', usersController.logout)
 router.get('/perfil',usersController.perfil); 
 
 
-router.get('/detalleUsuario/:id',usersController.detalle);
+router.get('/detalle/:id',usersController.detalle);
 
 
 // router.get('/editarPerfil', function(req, res, next) {

@@ -5,7 +5,7 @@
 
     <%- include('./partials/head') %>
 <body>
-    <% if (locals.user == undefined) { %>
+    <% if (locals.user =! undefined) { %>
         <%- include('./partials/headerLogueado') %> 
     <% } else { %>
      <%- include('./partials/header')  %>
@@ -14,9 +14,9 @@
     <main>
         <div class="user-detail container">
             <section class="top main-content">
-                <img class="profile" src="<%= usuario[0].fotoPerfil %>" alt="">
+                <img class="profile" src="<%= usuario.fotoPerfil %>" alt="">
                 <div class="info-usuario">
-                    <p> <%= usuario[0].nombreUsuario %> </p> 
+                    <p> <%= usuario.nombreUsuario %> </p> 
                     <a class="follow" href="">seguir</a>
                     <ul class="meta">
                         <li>2 post</li>

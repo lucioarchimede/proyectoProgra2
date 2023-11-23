@@ -6,7 +6,7 @@
 <%- include('./partials/head') %>
 
     <body>
-        <% if (locals.user == undefined) { %>
+        <% if (locals.user =! undefined) { %>
             <%- include('./partials/headerLogueado') %> 
         <% } else { %>
          <%- include('./partials/header')  %>
@@ -17,7 +17,7 @@
                     <section class="center main-content post">
                         <div class="info-usuario">
                             <img src="<%= %>" alt="" class="fotoPerfil">
-                            <p><a href="/usuarios/detalle/<%= posts.idUser %>"><%= posts.nombreUsuario %></a></p>
+                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.nombreUsuario %></a></p>
                         </div>
                         <img class="photo" src=<%= posts.imagen %> alt="">
                     </section>
@@ -29,13 +29,17 @@
                             <form action="" class="comment-form">
                                 <input type="text" class="input" placeholder="Agregar comentario">
                                 <button type="submit">Comentar</button>
+                                <button type="editar">Editar</button>
+                                <% if (){%>
+                                <button type="delete">Eliminar</button>
+                                <% }%>
                             </form>
                             <div>
                        <% for( let i = 0; i < posts.comentarios; i++ ) { %>        
                                 <article class="comment">
                                         <img src="<%= posts.comentarios[i].fotoDePer %>" alt="" class="fotoPerfil">
                                     <ul class="content">
-                                        <a class="user" href="/usuarios/detalle/<%= posts.comentarios[i].idUser %>"><%= posts.comentarios[i].nomComent %></a>
+                                        <a class="user" href="/users/detalle/<%= posts.comentarios[i].idUser %>"><%= posts.comentarios[i].nomComent %></a>
                                         <span class="text"> <%= posts.comentarios[i].textoComentario %></span>
                                     </ul>
                                 </article>

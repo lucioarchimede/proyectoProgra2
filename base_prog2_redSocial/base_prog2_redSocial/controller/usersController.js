@@ -156,9 +156,8 @@ const usersController = {
         let id = req.params.id
         //  let usuarioEncontrado = []
 
-        usuarios.findByPk(id, { include: [{ all: true, nested: true }], order: [["createdAt", "DESC"]] })
+        user.findByPk(id, { include: [{ all: true, nested: true }], order: [["createdAt", "DESC"]] })
             .then(function (result) {
-                res.send(result);
                 res.render("detalleUsuario", { usuario: result })
             })
             .catch(error => console.log(error))
