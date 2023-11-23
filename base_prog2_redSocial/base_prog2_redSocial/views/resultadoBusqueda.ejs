@@ -22,11 +22,11 @@
                         <img src="<%= datos[i].usuario.fotoPerfil %>" alt="" class="fotoPerfil">
                         
                         <h4>
-                            <a href="usuarios/detalle/<%= datos[i].idUsuario %>"><%= datos[i].usuario.usuario %></a>
+                            <a href="users/detalleUsuario/<%= datos[i].idUsuario %>"><%= datos[i].usuario.usuario %></a>
                         </h4>
                     </div>
                     <div class="post-body">
-                        <a href="/posteos/detalle/<%= datos[i].id %>">
+                        <a href="/posts/detalleUsuario/<%= datos[i].id %>">
                             <img src= <%= datos[i].nombreImagen %> alt="">
                         </a>
                     </div>
@@ -48,13 +48,13 @@
                             <% for( let j = 0; j < datos[i].comentario.length; j++ ) { %>
                               
                                 <li>
-                                    <a href="/usuarios/detalle/<%= datos[i].comentario[j].idUsuario %>"><%= datos[i].comentario[j].usuario.usuario %> :</a>
+                                    <a href="/users/detalleUsuario/<%= datos[i].comentario[j].idUsuario %>"><%= datos[i].comentario[j].usuario.usuario %> :</a>
                                     <span><%= datos[i].comentario[j].textoComentario %></span>
                                 </li>
     
                             <% } %>
     
-                            <a href="/posteos/detalle/<%= datos[i].id %>">Ver más...</a>
+                            <a href="/posts/detalleUsuario/<%= datos[i].id %>">Ver más...</a>
     
                         </ul>
                     </div>

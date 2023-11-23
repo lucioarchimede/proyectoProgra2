@@ -19,7 +19,7 @@ router.get('/logout', usersController.logout)
 
 // router.post('/edit',usersController.edit );
 
-// router.get('/perfil',usersController.perfil); req.session.user busque post.findAll(pos)
+router.get('/perfil',usersController.perfil); 
 
 
 router.get('/detalleUsuario/:id',usersController.detalle);

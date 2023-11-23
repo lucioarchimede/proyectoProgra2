@@ -16,18 +16,18 @@ const usersController = {
             return res.render('login');
         }
     },
-    loginPost: function(req,res){
+    loginPost: function (req, res) {
         let emailBuscar = req.body.email;
         let passwordBuscar = req.body.password;
 
         let filtrado = {
             where: [
-                {email: emailBuscar}
+                { email: emailBuscar }
             ]
         }
         let errors = {}
 
-        if (emailBuscar == undefined ) {
+        if (emailBuscar == undefined) {
             errors.message = 'El email está vacío';
             res.locals.errors = errors;
             return res.render('login')
@@ -37,32 +37,32 @@ const usersController = {
             res.locals.errors = errors;
             return res.render('login')
         } else {
-        
+
             user.findOne(filtrado)
-            .then((result) => {
+                .then((result) => {
 
-                if (result != null) {
-                    let claveCorrecta = bcrypt.compareSync(passwordBuscar, result.password);
-                    if (claveCorrecta) {
-                        req.session.user = result.dataValues;
-                        if (req.body.rememberme != undefined) {
-                            res.cookie('userId', result.dataValues.id, { maxAge: 1000 * 60 * 100 })
+                    if (result != null) {
+                        let claveCorrecta = bcrypt.compareSync(passwordBuscar, result.password);
+                        if (claveCorrecta) {
+                            req.session.user = result.dataValues;
+                            if (req.body.rememberme != undefined) {
+                                res.cookie('userId', result.dataValues.id, { maxAge: 1000 * 60 * 100 })
+                            }
+                            return res.redirect("/")
+
+                        } else {
+                            errors.message = 'El email existe, pero la contraseña es incorrecta';
+                            res.locals.errors = errors;
+                            return res.render('login')
                         }
-                        return res.redirect("/")
-
                     } else {
-                        errors.message = 'El email existe, pero la contraseña es incorrecta';
+                        errors.message = 'El email ingresado no existe';
                         res.locals.errors = errors;
                         return res.render('login')
                     }
-                } else {
-                    errors.message = 'El email ingresado no existe';
-                    res.locals.errors = errors;
-                    return res.render('login')
-                }
-            }).catch((err) => {
-                console.log(err);
-            }); 
+                }).catch((err) => {
+                    console.log(err);
+                });
 
         }
 
@@ -83,10 +83,10 @@ const usersController = {
         let filtrado = {
             where: [{ email: emailBuscar }]
         }
-        
+
         const resultado = await user.findOne(filtrado)
         console.log('usuario ', resultado)
-        try{
+        try {
             if (resultado != null) {
                 errors.message = 'El email ingresado ya existe';
                 res.locals.errors = errors;
@@ -142,7 +142,7 @@ const usersController = {
 
             }
         }
-        catch(err){
+        catch (err) {
             console.log('errorgeneral ', err)
 
         }
@@ -152,19 +152,19 @@ const usersController = {
         req.session.user = undefined
         return res.render('login')
     },
-    detalle: function (req,res){
+    detalle: function (req, res) {
         let id = req.params.id
         //  let usuarioEncontrado = []
-   
-          usuarios.findByPk(id, {include:[{all:true, nested: true}], order: [["createdAt","DESC"]]})
-          .then(function(result) {
-             res.send(result);
-             res.render("detalleUsuario", {usuario: result})   
-          })
-          .catch(error => console.log(error))
+
+        usuarios.findByPk(id, { include: [{ all: true, nested: true }], order: [["createdAt", "DESC"]] })
+            .then(function (result) {
+                res.send(result);
+                res.render("detalleUsuario", { usuario: result })
+            })
+            .catch(error => console.log(error))
     },
 
-    
+
     // edit: function (req, res) {
     //     console.log("body: " + req.body.email)
     //     return res.render("index", {})
@@ -182,22 +182,17 @@ const usersController = {
     //     console.log(usuarioEn);
     //     res.render("detalleUsuario", { usuario: usuarioEn })
     // },
-    // perfil: function (req, res) {
-    //     let usuario = 'MatiGimenez'
-    //     let usuarioEn = []
-
-    //     for (let i = 0; i < dataBase.posteos.length; i++) {
-    //         if (usuario == dataBase.posteos[i].nombreUsuario) {
-    //             usuarioEn.push(dataBase.posteos[i])
-    //         }
-    //     }
-
-    //     res.render("miPerfil", { usuario: usuarioEn })
-
-
-    // },
-
-}
+    perfil: function(req, res){
+      
+        let usuario = req.session.user;
+        user.findByPk(usuario.id, {include:[{all:true, nested: true}], order: [["createdAt","DESC"]]})
+        .then(function(result) {
+           res.render("miPerfil", {datos: result})   
+        })
+        .catch(error => console.log(error))
+     }
+    ,}
+      
 
 module.exports = usersController
 
