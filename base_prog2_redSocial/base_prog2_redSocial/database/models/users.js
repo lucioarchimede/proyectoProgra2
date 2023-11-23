@@ -34,7 +34,7 @@ module.exports = function(sequelize, dataTypes){
                 // underscored: true,
                 tableName: "usuarios",
                 timestamps: true,
-                underscored: false,
+
             }
         
             let User = sequelize.define(alias, cols, conf);

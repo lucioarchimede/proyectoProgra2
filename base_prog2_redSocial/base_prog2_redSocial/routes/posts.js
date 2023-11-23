@@ -6,7 +6,7 @@ router.get('/agregar',postController.guardarPost)
 
 router.get('/detalle/:id',postController.detalle)
 
-router.get('/buscar/:nombreUsuario',postController.searchResults)
+router.get('/buscar',postController.searchResults)
 
 router.get('/agregar', function(req, res, next) {
   res.render('agregarPost', { title: 'Agregar Post' });

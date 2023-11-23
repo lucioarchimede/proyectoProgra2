@@ -34,18 +34,18 @@ const postController = {
         
         let errors = {}
         post.findAll({
-            where: [{ nombreImagen : { [op.like]: "%" + searchResults + "%" } }],
+            where: [{ textoDescriptivo : { [op.like]: "%" + searchResults + "%" } }],
             include:[{all:true, nested: true}], order: [["createdAt","DESC"]]
         })
-            .then((datos) => {
+            .then((datosEncontrados) => {
                 
-            if (datos.length == 0) {
+            if (datosEncontrados.length == 0) {
                 errors.message = "No hay resultados para su busqueda"
                 res.locals.errors = errors
                 return res.render("resultadoBusqueda")
 
             }else{ 
-                return res.render('resultadoBusqueda', { data: datos })
+                return res.render('resultadoBusqueda', { datos: datosEncontrados })
             }
         })
         .catch((error) => {
