@@ -4,13 +4,8 @@ const bcrypt = require('bcryptjs');
 const posts = require('../database/models/posts');
 const post = db.Post
 const comment = db.Comment
-<<<<<<< HEAD
-const user = db.User
-const op = db.Sequelize.Op
-=======
 const user = db.User;
 const op = db.Sequelize.Op;
->>>>>>> 8ace60b8be854af3fcf793df9217f7126928d7a9
 
 
 const postController = {

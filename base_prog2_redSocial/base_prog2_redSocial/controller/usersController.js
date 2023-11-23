@@ -56,60 +56,11 @@ const usersController = {
               res.locals.errors = errors;
               return res.render("login");
             }
-<<<<<<< HEAD
-        }
-        catch (err) {
-            console.log('errorgeneral ', err)
-
-        }
-    },
-    logout: function (req, res) {
-        res.clearCookie("idUsuario");
-        req.session.user = undefined
-        return res.render('login')
-    },
-    detalle: function (req, res) {
-        let id = req.params.id
-        //  let usuarioEncontrado = []
-
-        user.findByPk(id, { include: [{ all: true, nested: true }], order: [["createdAt", "DESC"]] })
-            .then(function (result) {
-                res.render("detalleUsuario", { usuario: result })
-            })
-            .catch(error => console.log(error))
-    },
-
-
-    // edit: function (req, res) {
-    //     console.log("body: " + req.body.email)
-    //     return res.render("index", {})
-
-    // },
-    // detalle: function (req, res) {
-    //     let id = req.params.usuarioId
-    //     let usuarioEn = []
-
-    //     for (let i = 0; i < dataBase.posteos.length; i++) {
-    //         if (id == dataBase.posteos[i].usuarioId) {
-    //             usuarioEn.push(dataBase.posteos[i])
-    //         }
-    //     }
-    //     console.log(usuarioEn);
-    //     res.render("detalleUsuario", { usuario: usuarioEn })
-    // },
-    perfil: function(req, res){
-      
-        let usuario = req.session.user;
-        user.findByPk(usuario.id, {include:[{all:true, nested: true}], order: [["createdAt","DESC"]]})
-        .then(function(result) {
-           res.render("miPerfil", {datos: result})   
-=======
           } else {
             errors.message = "El email ingresado no existe";
             res.locals.errors = errors;
             return res.render("login");
           }
->>>>>>> 8ace60b8be854af3fcf793df9217f7126928d7a9
         })
         .catch((err) => {
           console.log(err);
