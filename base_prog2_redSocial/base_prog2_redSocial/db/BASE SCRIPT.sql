@@ -39,7 +39,7 @@ CREATE TABLE comentarios (
 	
 );
 
-INSERT INTO usuarios ( usuario, email, contraseña, fotoPerfil, fechaNacimiento)
+INSERT INTO usuarios ( usuario, email, password, fotoPerfil, fechaNacimiento)
 VALUES
   ( 'MatiGimenez', 'matigimenez@gmail.com', 'ABC123', 'https://i1.wp.com/www.masrojo.com.ar/home/wp-content/uploads/gimenez.jpeg?fit=1200%2C800&ssl=1', '1999-03-06'),
   ( 'ChrisHelmich', 'chrishelmich@gmail.com', 'DEF456', 'https://http2.mlstatic.com/D_NQ_NP_761988-MLA44370138189_122020-O.webp', '2003-06-19'),

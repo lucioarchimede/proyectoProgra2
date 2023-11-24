@@ -41,7 +41,7 @@
                                 <ul>
                                     <% for( let j = 0; j < posts[i].comentario.length; j++ ) { %>
                                         <li>
-                                            <a href="/users/detalle/<%=posts[i].comentario[j].idUsuario  %>"><%= posts[i].comentario[j].usuario %></a>
+                                            <a href="/users/detalle/<%=posts[i].comentario[j].idUsuario  %>"><%= posts[i].comentario[j].usuario.usuario %></a>
                                             <span><%= posts[i].comentario[j].textoComentario %></span>
                                         </li>
                                     
