@@ -28,8 +28,10 @@
                         <section class="comments">
                             <form action="" class="comment-form">
                                 <input type="text" class="input" placeholder="Agregar comentario">
-                                <button type="submit">Comentar</button>
+                               <button type="submit">Comentar</button>
+
                                 <button type="editar">Editar</button>
+
                                 <% if (locals.user != undefined && locals.user.id == posts.idUser){%>
                                 <button type="delete">Eliminar</button>
                                 <% }%>
@@ -37,13 +39,23 @@
                             <div>
                        <% for( let i = 0; i < posts.comentarios; i++ ) { %>        
                                 <article class="comment">
-                                        <img src="<%= posts.comentarios[i].fotoDePer %>" alt="" class="fotoPerfil">
+                                        <img src="<%= posts.comentarios[i].fotoDePerfil %>" alt="" class="fotoPerfil">
                                     <ul class="content">
                                         <a class="user" href="/users/detalle/<%= posts.comentarios[i].idUser %>"><%= posts.comentarios[i].nomComent %></a>
                                         <span class="text"> <%= posts.comentarios[i].textoComentario %></span>
                                     </ul>
                                 </article>
                                 <% } %>
+                                
+                                <% for( let j = 0; j < posts.comentario.length; j++ ) { %>        
+                                    <article class="comment">
+                                        <ul class="content">
+                                            <a class="user" href="/users/detalle/<%= posts.comentario[j].usuarioId %>"><%= posts.comentario[j].usuario.usuario %></a>
+                                            <span class="text">: <%= posts.comentario[j].textoComentario %></span>
+                                        </ul>
+                                    </article>
+                                    <% } %>
+
                             </div>
                         </section>
                     </section>
