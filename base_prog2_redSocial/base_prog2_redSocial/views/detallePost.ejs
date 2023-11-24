@@ -16,24 +16,24 @@
                 <div class="post-detail container">
                     <section class="center main-content post">
                         <div class="info-usuario">
-                            <img src="<%=posts.usuario.fotoPerfil %>" alt="" class="fotoPerfil">
-                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.usuario.usuario %></a></p>
+                            <img src="<%=posts.usuario%>" alt="" class="fotoPerfil">
+                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.usuario %></a></p>
                         </div>
-                        <img class="photo" src=<%= posts.nombreImagen %> alt="">
+                        <img class="photo" src="<%= posts.nombreImagen %>" alt="">
                     </section>
                     
                     
                     <section class="right">
                         <h4 class="h4-detalle">Comentarios</h4>
                         <section class="comments">
-                            <form action="" class="comment-form">
+                            <form action="/posts/editar/<%= posts.id%>" class="comment-form">
                                 <input type="text" class="input" placeholder="Agregar comentario">
                                <button type="submit">Comentar</button>
-
-                               <a href="/posts/editar/<%= posts.id%>">EDITAR POSTEO</a>
+                               
+                               <button type="sumbit" class="editP">Editar</button>
 
                                 <% if (locals.user != undefined && locals.user.id == posts.idUser){%>
-                                <button type="delete">Eliminar</button>
+                                <button class=""type="delete">Eliminar</button>
                                 <% }%>
                             </form>
                             <div>

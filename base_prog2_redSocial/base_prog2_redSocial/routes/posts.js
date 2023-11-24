@@ -18,6 +18,7 @@ router.get('/editar/:id', postController.getEditar)
 
 router.post('/editar/:id', postController.editarPost)
 
+router.post('/borrar/:id', postController.borrar)
 
 
 module.exports = router;

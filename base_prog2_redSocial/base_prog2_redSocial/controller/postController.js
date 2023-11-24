@@ -45,6 +45,7 @@ const postController = {
     post
       .findByPk(id, filtro)
       .then(function (result) {
+        console.log("result ", result);
         if (result == null) {
           res.send("No se encontró el posteo");
         } else {
@@ -84,37 +85,72 @@ const postController = {
 
   getEditar: function (req, res) {
     if (req.session.user) {
-      res.render("editarPost");
+      post.findByPk(req.params.id).then((resultado) => {
+        res.render("editarPost", { posts: resultado });
+      });
     } else {
       res.redirect("/users/login");
     }
   },
 
   editarPost: function (req, res) {
-    if (req.session.user) {
-      user.findByPk(req.session.user.id)
+    let postitem = {
+      id: req.params.id,
+      textoDescriptivo: req.body.descripcionPost,
+      nombreImagen: req.body.imagenPerfil,
+    };
+    post
+      .update(postitem, { where: { id: req.params.id } })
+      .then(function (result) {
+        console.log("result editar: ", result);
+        if (result) {
+          console.log("userId: ", req.session.user.id);
+          post
+            .findAll({
+              include: [
+                {
+                  idUsuario: req.session.user.id,
+                  all: true,
+                  nested: true,
+                },
+              ],
+            })
+            .then((list) => {
+              console.log("list ***************************************", list);
+              res.render("index", { posts: list }); //Ver q onda con esto
+            });
+        } else {
+          res.send("No se encontró el usuario");
+        }
+      })
+      .catch(function (error) {
+        console.log("error ", error);
+        res.send(error);
+      });
+  },
+  borrar: function (req, res) {
+    let idPost = req.params.id;
+
+    if (req.session.user != undefined) {
+      comment.destroy({
+          where: { posteoId: idPost },
+        })
         .then(function (result) {
-          if (result) {
-            if (req.session.user.id === result.id) {
-              res.render("editarPost", { posts: result });
-            } else {
-              res.send("No tiene permisos para editar este producto");
-            }
-          } else {
-            res.send("No se encontró el usuario");
-          }
+          post.destroy({
+            where: { id: idPost },
+          });
+        })
+        .then(function (result) {
+          return res.redirect("/users/miPerfil");
         })
         .catch(function (error) {
-          res.send(error);
+          return res.send(error);
         });
     } else {
-      res.redirect("/users/login");
+      return res.render(`/posts/detallePost/${req.params.id}`);
     }
   },
-
- 
 };
-
 //*   let nombre = req.params.nombreUsuario;
 //*  let usuarioEn = []
 
