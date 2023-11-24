@@ -33,6 +33,7 @@ const postController = {
   },
 
   detalle: function (req, res) {
+   // console.log("detalle: ",id);
     let id = req.params.id;
     console.log(id);
     let filtro = {
@@ -42,8 +43,7 @@ const postController = {
       ],
     };
 
-    post
-      .findByPk(id, filtro)
+    post.findByPk(id, filtro)
       .then(function (result) {
         console.log("result ", result);
         if (result == null) {
@@ -99,14 +99,12 @@ const postController = {
       textoDescriptivo: req.body.descripcionPost,
       nombreImagen: req.body.imagenPerfil,
     };
-    post
-      .update(postitem, { where: { id: req.params.id } })
+    post.update(postitem, { where: { id: req.params.id } })
       .then(function (result) {
         console.log("result editar: ", result);
         if (result) {
           console.log("userId: ", req.session.user.id);
-          post
-            .findAll({
+          post.findAll({
               include: [
                 {
                   idUsuario: req.session.user.id,
@@ -129,15 +127,15 @@ const postController = {
       });
   },
   borrar: function (req, res) {
-    let idPost = req.params.id;
+    let idUser = req.body.idUsuario;
 
     if (req.session.user != undefined) {
       comment.destroy({
-          where: { posteoId: idPost },
+          where: { id: idUser },
         })
         .then(function (result) {
           post.destroy({
-            where: { id: idPost },
+            where: { id: idUser },
           });
         })
         .then(function (result) {
@@ -147,9 +145,29 @@ const postController = {
           return res.send(error);
         });
     } else {
-      return res.render(`/posts/detallePost/${req.params.id}`);
+      return res.redirect('/posts/detallePost/' + req.body.idUser);
     }
-  },
+  }
+  // agregarComentario: function (req, res){
+  //   if (req.session.user){
+  //     let nuevoComment = {
+  //       idUser: req.session.user.id,
+  //       idPost: req.body.idPost,
+  //       comentario: req.body.textoComentario
+  //     }
+  //     comment.create(nuevoComment)
+  //     .then(function (result){
+  //       res.redirect('/posts/detallePost/' + req.body.id)
+  //     })
+  //     .catch(function(error){
+  //       res.send(error);
+
+  //     });
+
+  //   }
+    
+
+  // }
 };
 //*   let nombre = req.params.nombreUsuario;
 //*  let usuarioEn = []

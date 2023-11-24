@@ -20,5 +20,7 @@ router.post('/editar/:id', postController.editarPost)
 
 router.post('/borrar/:id', postController.borrar)
 
+// router.post('/comentar', postController.agregarComentario)
+
 
 module.exports = router;

@@ -124,6 +124,8 @@
             border-radius: 90%;
             padding: 1px;
             border: 2px solid #4987c5;
+            height: 50px;
+            width: 50px;
         }
         .post-reacciones {
             display: flex;
