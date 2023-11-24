@@ -39,10 +39,6 @@
                             <div>
                        <% for( let i = 0; i < posts.comentario.length; i++ ) { %>        
                                 <article class="comment">
-                                        <img src="<%= posts.comentarios[i].fotoDePerfil %>" alt="" class="fotoPerfil">
-
-                                        <img src="<%= posts.comentario[i].usuario.fotoPerfil %>" alt="" class="fotoPerfil">
-
                                     <ul class="content">
                                         <a class="user" href="/users/detalle/<%= posts.comentario[i].usuario.id %>"><%= posts.comentario[i].usuario.usuario %></a>
                                         <span class="text"> <%= posts.comentario[i].textoComentario %></span>
