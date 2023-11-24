@@ -14,6 +14,10 @@ router.post('/agregar', postController.nuevoPost)
 
 router.get('/detallePost/:id',postController.detalle);
 
+router.get('/editar/:id', postController.getEditar)
+
+router.post('/editar/:id', postController.editarPost)
+
 
 
 module.exports = router;

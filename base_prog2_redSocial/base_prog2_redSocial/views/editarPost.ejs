@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<%- include('./partials/head') %>
+
+    <body>
+        <% if (locals.user =! undefined) { %>
+            <%- include('./partials/headerLogueado') %> 
+        <% } else { %>
+         <%- include('./partials/header')  %>
+        <% } %>
+
+        <div class="edit-product-container">
+            <h1>Editar Producto</h1>
+        
+            <form action="/posts/editar/<%= posteo.id %>" method="post">
+                <div>
+                    <label for="descripcionPost">Descripción del posteo:</label>
+                    <input type="text" id="descripcionPost" name="descripcionPost" value="<%= posts.textoDescriptivo %>" placeholder="Descripcion del posteo" required>
+                </div>
+                <div>
+                    <label for="imagenPerfil">Foto del posteo:</label>
+                    <input type="text" id="imagenPerfil" name="imagenPerfil" value="<%= posts.nombreImagen %>" placeholder="Foto del posteo" required>
+                </div>
+                <input type="submit" value="EDITAR POSTEO">
+            </form>
+        </div>
+            </main>
+
+            <footer class="main-footer">
+                <%- include('./partials/footer') %>
+            </footer>
+    </body>
+
+</html>

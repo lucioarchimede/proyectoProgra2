@@ -15,7 +15,7 @@
                     <% for (let i = 0; i < posts.length; i++) { %>
                         <article class="post">
                             <div class="info-usuario">
-                                <img src="<%= %>" alt="">
+                                <img  class="info-usuario img" src="<%=posts[i].usuario.fotoPerfil %>" alt="">
                                 <h4>
                                     <a href="/users/detalle/<%= posts[i].usuario.id %>">
                                         <%= posts[i].usuario.usuario %>

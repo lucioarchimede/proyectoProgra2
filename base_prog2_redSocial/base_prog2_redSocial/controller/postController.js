@@ -82,7 +82,37 @@ const postController = {
       });
   },
 
-  
+  getEditar: function (req, res) {
+    if (req.session.user) {
+      res.render("editarPost");
+    } else {
+      res.redirect("/users/login");
+    }
+  },
+
+  editarPost: function (req, res) {
+    if (req.session.user) {
+      user.findByPk(req.session.user.id)
+        .then(function (result) {
+          if (result) {
+            if (req.session.user.id === result.id) {
+              res.render("editarPost", { posts: result });
+            } else {
+              res.send("No tiene permisos para editar este producto");
+            }
+          } else {
+            res.send("No se encontró el usuario");
+          }
+        })
+        .catch(function (error) {
+          res.send(error);
+        });
+    } else {
+      res.redirect("/users/login");
+    }
+  },
+
+ 
 };
 
 //*   let nombre = req.params.nombreUsuario;

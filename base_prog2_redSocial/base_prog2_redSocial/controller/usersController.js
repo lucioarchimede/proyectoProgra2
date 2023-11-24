@@ -105,13 +105,13 @@ const usersController = {
             errors.message = "La contraseña debe tener más de 3 caracteres";
             res.locals.errors = errors;
             return res.render("register");
-          } else {
+          } else  {
             console.log("formulario correcto");
             let datos = req.body;
-            let fotoPerfilStore = "/img/fotoPerfilDefault.webp";
+            let fotoPerfilStore = req.body.foto;
             console.log("foto: ", datos.fotoPerfil);
             if (datos.fotoPerfil == undefined || datos.fotoPerfil != "") {
-              datos.fotoPerfil = fotoPerfilStore;
+              datos.fotoPerfil = "/img/fotoPerfilDefault.webp" ;
             }
 
             let guardarPerfil = {
@@ -181,8 +181,7 @@ const usersController = {
   // },
   perfil: function (req, res) {
     let usuario = req.session.user;
-    user
-      .findByPk(usuario.id, {
+    user.findByPk(usuario.id, {
         include: [{ all: true, nested: true }],
         order: [["createdAt", "DESC"]],
       })
