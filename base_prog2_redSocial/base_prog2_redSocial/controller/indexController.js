@@ -36,7 +36,7 @@ const indexController = {
     //         logueado: dataBase.usuario.logueado
     //     })
     // },
-    home: async function (req, res) {
+    home:  function (req, res) {
         
         let filtro = {
             include:[{all:true, nested: true}], order: [["createdAt","DESC"]]

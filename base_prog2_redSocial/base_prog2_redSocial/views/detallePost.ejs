@@ -6,7 +6,7 @@
 <%- include('./partials/head') %>
 
     <body>
-        <% if (locals.user =! undefined) { %>
+        <% if (locals.user != undefined) { %>
             <%- include('./partials/headerLogueado') %> 
         <% } else { %>
          <%- include('./partials/header')  %>
@@ -16,8 +16,8 @@
                 <div class="post-detail container">
                     <section class="center main-content post">
                         <div class="info-usuario">
-                            <img src="<%=posts.usuario%>" alt="" class="fotoPerfil">
-                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.usuario %></a></p>
+                            <img src="<%=posts.usuario.fotoPerfil%>" alt="" class="fotoPerfil">
+                            <p><a href="/users/detalle/<%= posts.idUser %>"><%= posts.usuario.usuario %></a></p>
                         </div>
                         <img class="photo" src="<%= posts.nombreImagen %>" alt="">
                     </section>
@@ -26,16 +26,25 @@
                     <section class="right">
                         <h4 class="h4-detalle">Comentarios</h4>
                         <section class="comments">
-                            <form action="/posts/editar/<%= posts.id%>" class="comment-form">
-                                <input type="text" class="input" placeholder="Agregar comentario">
-                               <button type="submit">Comentar</button>
-                               
-                               <button type="sumbit" class="editP">Editar</button>
-
-                                <% if (locals.user != undefined && locals.user.id == posts.idUser){%>
-                                <button class=""type="delete">Eliminar</button>
-                                <% }%>
+                            <form action="/posts/comentar" class="comment-form" class="form" method="POST">
+                                <input type="hidden" name="idPost" value="<%= posts.id %>">
+                                <input class="form-input" name="textoComentario" type="text" value=""
+                                    placeholder="Agregar comentario">
+                                <button type="submit">Comentar</button>
                             </form>
+
+                            <% if ( locals.user ) { %>
+                                <% if ( locals.user.id === posts.usuario.id ) { %>
+                                    <p class="comment-form">
+                                        <a href="/posts/editar/<%= posts.id %>">Editar</a>
+
+                                        <form action="/posts/borrar/<%= posts.id %>" class="comment-form" method="POST">
+                                            <input type="hidden" name="idUser" value="<%= posts.usuario.id %>">
+                                            <button type="submit">Eliminar</button>
+                                        </form>
+                                    </p>
+                                <% } %>
+                            <% } %>
                             <div>
                        <% for( let i = 0; i < posts.comentario.length; i++ ) { %>        
                                 <article class="comment">
@@ -45,15 +54,6 @@
                                     </ul>
                                 </article>
                                 <% } %>
-                                
-                                <% for( let j = 0; j < posts.comentario.length; j++ ) { %>        
-                                    <article class="comment">
-                                        <ul class="content">
-                                            <a class="user" href="/users/detalle/<%= posts.comentario[j].usuarioId %>"><%= posts.comentario[j].usuario.usuario %></a>
-                                            <span class="text">: <%= posts.comentario[j].textoComentario %></span>
-                                        </ul>
-                                    </article>
-                                    <% } %>
 
                             </div>
                         </section>

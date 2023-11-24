@@ -111,7 +111,7 @@ const usersController = {
             let fotoPerfilStore = req.body.foto;
             console.log("foto: ", datos.fotoPerfil);
             if (datos.fotoPerfil == undefined || datos.fotoPerfil != "") {
-              datos.fotoPerfil = "/img/fotoPerfilDefault.webp" ;
+              datos.fotoPerfil = "";
             }
 
             let guardarPerfil = {
@@ -124,8 +124,7 @@ const usersController = {
             };
             console.log("usuario: ", guardarPerfil);
 
-            user
-              .create(guardarPerfil)
+            user.create(guardarPerfil)
               .then(function (result) {
                 console.log("grabacion correcta");
                 // res.redirect('/users/login');
