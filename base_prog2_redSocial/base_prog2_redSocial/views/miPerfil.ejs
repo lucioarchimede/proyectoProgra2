@@ -25,11 +25,11 @@
                 <section class="bottom">
     
                     <article class="post">
-                        <a href="<%'/posts/detallePost/'+ datos.posteo[i].id%>">
+                        <a href="/posts/detallePost/<%= datos.posteo[i].id %>">
                             <img src="<%= datos.posteo[i].nombreImagen%>" alt="">
                         </a>
                     </article>
-        </div>
+        
         <% } %>
     </main>
 
